@@ -132,3 +132,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 下面的静态目录用来存放app中使用的共同的静态文件
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)

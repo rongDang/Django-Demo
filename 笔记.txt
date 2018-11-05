@@ -65,12 +65,24 @@
 7,静态文件
     STATIC_URL = '/static/'
     Djano中，静态资源的存放通过设置STATIC_URL，STATICFILES_DIRS来设置，默认为：STATIC_URL = '/static/'，
-    这个static是在Django具体APP下建立的static目录，用来存放静态资源，而STATICFILES_DIRS一般用来设置普通的静态资源，
+    这个static是在Django具体APP下建立的static目录，用来存放静态资源，而STATICFILES_DIRS一般用来设置通用的静态资源，
     对应的目录不放在APP下，而是在project下，例如:STATICFILES_DIRS=(os.path.join(BASE_DIR,"my_static"),)
 
-    具体在模板文件中访问的时候，都是统一用：/static/资源名的方式，就可以访问到资源，不论具体的目录是APP下的static，
-    还是project下的my_static, 都可以用/static/资源名的方式访问到。
+    重点：具体在模板文件中访问的时候，都是统一用：/static/资源名 的方式，就可以访问到资源，不论具体的目录是APP下的static文件夹，
+    还是project下的my_static文件文件夹中静态文件, 都可以用/static/资源名 的方式访问到，也就是href='/static/***.css' 的方式访问
 
+    实际情况下,静态文件的一般安放位置有两种:
+    1.一种就是在每个app里面新建一个static文件夹,将静态文件放到里面,在加载静态文件时,比如要在模板中用到静态文件,
+    django会自动在每个app里面搜索static文件夹(所以,不要把文件夹的名字写错哦, 否则django就找不到你的文件夹了)
+
+    2.另一种,就是在所有的app文件外面,建立一个公共的文件夹, 因为有些静态文件不是某个app独有的,那么就可以把它放到一个公共文件夹里面,
+    方便管理(注意,建立一个公共的静态文件的文件夹只是一种易于管理的做法,但是不是必须的,app是可以跨app应用静态文件的,
+
+    因为最后所有的静态文件都会在STATIC_ROOT里面存在)
+    那现在的问题是如何让django知道你把一些静态文件放到app以外的公共文件夹中呢,那就需要配置STATICFILES_DIRS了
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'common_static'),
+    )
 
 8，Django的上下文处理器
     上下文渲染器可以理解为项目中的全局函数，返回的数据在所有的html中都可以使用。
