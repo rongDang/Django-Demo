@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
-from django.http import HttpResponse, Http404
-# Create your views here.
+from django.http import HttpResponse
+from django.db import connection
 
 
 def index(request):
@@ -24,4 +24,10 @@ def show_work(request):
     return render(request, 'model/show.html', locals())
 
 
+def delete(request):
+    id = request.POST["id"]
+    cur = connection.cursor()
+    cur.execute("delete from student where id='%s'" % id)
+    connection.commit()
+    return HttpResponse("1")
 

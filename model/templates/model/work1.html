@@ -4,16 +4,20 @@
     <title>Title</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'model/css/bootstrap.min.css'%}" >
+    <script src="{% static 'model/js/jquery-3.2.1.min.js' %}"></script>
 </head>
 <body>
 <div class="container">
     <div class="list-group">
         <!--这里使用的是上下文渲染器返回的数据-->
-        {% for name,score in data.items %}
-        <a href="{% url 'model:show'  %}?name={{ name }}&score={{ score }}" class="list-group-item">
-            <span class="badge">{{ score }}</span>
-            {{ name }}
-        </a>
+        {% for id,name,score in data %}
+            <div style="width: 1140px;">
+                <a href="{% url 'model:show' %}?name={{ name }}&score={{ score }}" class="list-group-item" style="width: 1000px;float: left">
+                    <span class="badge">{{ score }}</span>
+                    {{ name }}
+                </a>
+                <a id="{{ id }}" class="btn btn-success" style="float: right;">删除</a>
+            </div>
         {% endfor %}
     </div>
     <div>
@@ -22,4 +26,24 @@
     </div>
 </div>
 </body>
+<script>
+    $(function () {
+        $(".btn").click(function () {
+            var id = $(this).attr("id");
+            $.ajax({
+                url:"{% url 'model:delete' %}",
+                type: "POST",
+                dataType: "json",
+                //"csrfmiddlewaretoken" 是给Ajax添加csrf验证
+                data: {"id": id,"csrfmiddlewaretoken":"{{ csrf_token }}"},
+                success:function () {
+                    location.href='{% url 'model:work' %}'
+                },error:function () {
+                    alert("异常")
+                }
+            })
+        })
+    })
+</script>
 </html>
+

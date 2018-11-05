@@ -9,6 +9,7 @@ urlpatterns = [
     path('year/<int:year>', views.year),
     path('index/', views.index, name="main"),
     path('work/', views.work, name='work'),
-    path('show_work/', views.show_work, name='show')
+    path('show_work/', views.show_work, name='show'),
+    path('delete/', views.delete, name='delete'),
 ]
 
