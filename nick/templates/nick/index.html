@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nick/css/bootstrap.min.css'%}" >
+</head>
+<body>
+    <div class="container">
+        <h1 align="center">nick的首页</h1>
+        <!--可以理解为flask中的 url_for()-->
+        <a href="{% url 'nick:show_data' '传递的参数' %}">跳转到数据展示</a>
+    </div>
+</body>
+</html>

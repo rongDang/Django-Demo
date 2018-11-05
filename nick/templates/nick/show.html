@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>数据的展示</title>
+    {% load static myFilter %}
+    <script src="{% static 'nick/js/jquery-3.2.1.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'nick/css/bootstrap.min.css'%}" >
+</head>
+<body>
+    <div class="container">
+        <h1 align="center">{{ title }}</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>name</td>
+                    <td>age</td>
+                    <td>sex</td>
+                    <td>scroe</td>
+                </tr>
+            </thead>
+            <tbody>
+            <!--values是模板自带的方法，获取字典student中的值-->
+            {% for foo in student.values %}
+            <tr>
+                <td>{{ foo.name }}</td>
+                <td>{{ foo.age }}</td>
+                <td>{{ foo.sex }}</td>
+                <td>{{ foo.scroe }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <!--用items可以获取字典中的键值-->
+        <h2>键--->值</h2>
+        {% for key,val in student.items %}
+            <h3>{{ key }}-->{{ val }}</h3>
+        {% endfor %}
+        {% for foo in names reversed%}
+            {% if forloop.first or forloop.last %}
+                <h3 style="background-color: red">{{ forloop.revcounter }}--{{ foo }}</h3>
+            {% elif forloop.counter == 3 %}
+                <h3 style="background-color: green">{{ forloop.revcounter }}--{{ foo }}</h3>
+            {% else %}
+                <h3>{{ forloop.revcounter }}--{{ foo }}</h3>
+            {% endif %}
+        {% endfor %}
+
+        <h2 align="center">{{ msg }}</h2>
+        <h2 align="center">Django过滤器的使用:{{ array.0|add:array.2 }}</h2>
+        <!--下面使用自定义的过滤器-->
+        <h2 align="center">{{ array.3|square:8 }}</h2>
+    </div>
+</body>
+</html>

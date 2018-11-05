@@ -1,0 +1,103 @@
+1,Django项目和Django应用
+    Django项目是使用django-admin工具创建的项目结构，django-admin startproject myproject
+    Django应用是在Django项目中的，使用Django项目的manage.py创建，python manage.py startapp myapp
+
+2,Django应用
+    一个Django项目就是一个基于Django的Web应用，一个Django项目包含一组配置和若干个Django应用，Django应用就是一个可重用的python包
+    注意:Django应用汇总可以包含models, view, templates, template tags, static files, urls等。
+    一个Django应用也可以被包含到多个Django项目中，因为Django应用是可重用的Python软件包。
+
+
+3,Django应用的注册
+    创建出来的应用虽然再工程项目中，但是django工程并不能立即直接使用该应用，需要到配置文件中注册才能使用
+    在setting.py中，INSTALLED_APPS中注册创建的应用，如下所示：
+
+    INSTALLED_APPS = [
+        'django.contrib.admin',              # 站点管理系统
+        'django.contrib.auth',               # 认证系统
+        'django.contrib.contenttypes',       # content types 框架
+        'django.contrib.sessions',           # session 框架
+        'django.contrib.messages',           # message 框架
+        'django.contrib.staticfiles',        # 静态文件管理框架
+        'model.apps.ModelConfig',            # Django应用的注册
+        'nick.apps.NickConfig',
+    ]
+    创建的应用注册后就可以使用了，这里我在model和nick中都创建了一个templates，用来存放html文件，
+    在应用的视图文件views.py中返回对应的页面就是应用自己templates中对应的文件(会先到项目的templates中查找)
+    这里和flask类似，最好不要有同名的html文件，不然会默认选则匹配第一个,官方建议：/templates/nick/***.html  这样写
+    这样写的话就算别的应用中有同名的文件，Django也不会混淆
+
+
+4,关于url中的一些路径写法:
+    path('index/', views.index, name="main")
+    # 在path中添加一个name的话对这个链接可以更好的重用，如果在视图中有多次跳转到index这个链接，
+    直接redirect("index")不利于后续的更改， 如果index要改为别的名字，那么在视图中引用该链接的名字都需要更改，
+    而在路径中添加name后，把跳转的代码改为:redirect(reverse("main")),后续index地址需要改为别的则只需要改path中的路径就可
+
+    链接url只有写在Django项目默认的urls文件中才会有效果，在这个案例中有两个app，model和nick两个app，
+    这两个app可以理解为这个项目Demo1中的两个独立的功能模板，在这两个模板中有自己的视图文件，和urls文件(一般是自己创建)
+    模板中的urls文件和项目默认的urls文件一样，要想要模板中的url在项目中有效需要将模板urls文件添加到项目默认urls文件中：
+
+    Demo1\urls.py
+        urlpatterns = [
+            path('admin/', admin.site.urls),
+            path('model/', include('model.urls')),
+            path('nick/', include('nick.urls'))
+        ]
+
+    这里可以理解为flask中的注册蓝图，这里相当于是将模板中的url添加到项目url路径中，然后给这个模板一个根路径，
+    如果我们要访问model模块下的index视图函数，而在model中的index视图函数对应的路径为index，那么访问路径为/model/index
+
+
+5,应用命名空间
+    给每个模块urls文件中添加:app_name="***"，这样就给了这个url添加了一个名字，好处是不会混淆url
+    例如在model中有个login，在nick中有个login，那么在调用login时，模块中urls文件没有添加app_name
+    那么调用的login会是排在前面模块的login，这里会调用的是model中的login，待测试。
+
+6,关于Django应用使用static文件
+    在已经安装了的app下创建一个文件夹叫做static，然后再在这个static文件夹下创建一个当前app的名字的文件夹，
+    再把静态文件放到这个文件夹下。例如你的app叫做book，有一个静态文件叫做book.jpg，那么路径为book/static/book/book.jpg。
+    （为什么在app下创建一个static文件夹，还需要在这个static下创建一个同app名字的文件夹呢？原因是如果直接把静态文件放在
+    static文件夹下，那么在模版加载静态文件的时候就是使用book.jpg，如果在多个app之间有同名的静态文件，这时候可能就会产生混淆。
+    而在static文件夹下加了一个同名app文件夹，在模版中加载的时候就是使用app名/book.jpg，这样就可以避免产生混淆。）
+    注意： 文件夹的名字必须为static 。
+
+7,静态文件
+    STATIC_URL = '/static/'
+    Djano中，静态资源的存放通过设置STATIC_URL，STATICFILES_DIRS来设置，默认为：STATIC_URL = '/static/'，
+    这个static是在Django具体APP下建立的static目录，用来存放静态资源，而STATICFILES_DIRS一般用来设置普通的静态资源，
+    对应的目录不放在APP下，而是在project下，例如:STATICFILES_DIRS=(os.path.join(BASE_DIR,"my_static"),)
+
+    具体在模板文件中访问的时候，都是统一用：/static/资源名的方式，就可以访问到资源，不论具体的目录是APP下的static，
+    还是project下的my_static, 都可以用/static/资源名的方式访问到。
+
+
+8，Django的上下文处理器
+    上下文渲染器可以理解为项目中的全局函数，返回的数据在所有的html中都可以使用。
+    例如:我们在A.html中写有一个导航条，导航条数据从数据库中获取再渲染到html中去，如果不使用上下文渲染器的话
+    需要到每个用到导航条的视图函数中再写导航条数据的变量，不这样写的话，如果B.html继承A.html，B.html是继承不了A.html的变量的
+    也就是说B.html显示不了A.html中的导航条数据，解决的方法就是Django的上下文处理器
+
+    使用方法：在项目文件夹中(settings文件处)新建 context_processor.py文件，在中间写你需要的 上下文处理器(函数):
+    def example(request)
+        return {"time": "2018-11-11"}
+    写好后，到settings.py中添加这个上下文处理器：
+    TEMPLATES = [
+        {
+            OPTIONS': {
+                'context_processors': [
+                    'Demo1.context_processor.example',
+                ],
+            },
+        },
+    ]
+    添加后，你的所有html中可以使用  {{ time }} 这个变量了，模板继承这个time也可以显示出来。
+
+
+9，Django的错误视图，404，503等
+    在settings中设置DEBUG = False，然后设置：ALLOWED_HOSTS = ['*'](允许访问的ip)
+    然后就可以看到Django默认的404，和503错误视图。项目测试阶段不建议使用
+
+最后分享一个快捷键的使用：在我们写项目的时候，有时候修改了代码而没有效果，这是因为浏览器使用的缓存加载，
+这个时候我们就可以使用这个快捷键来不使用缓存加载一个文件，来达到查看修改代码之后的效果的目地。
+ctrl+shift+r 不使用缓存加载一个文件

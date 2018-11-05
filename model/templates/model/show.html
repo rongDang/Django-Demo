@@ -1,0 +1,5 @@
+{% extends 'model/work1.html' %}
+<!--继承的html中如果有Django的模板语言则不会显示那些数据，这里不能显示work1.html中的那些列表组-->
+{% block user %}
+    <h2 align="center">{{ name }}的成绩是{{ score }}</h2>
+{% endblock %}

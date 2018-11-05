@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'model/css/bootstrap.min.css'%}" >
+</head>
+<body>
+<div class="container">
+    <div class="list-group">
+        <!--这里使用的是上下文渲染器返回的数据-->
+        {% for name,score in data.items %}
+        <a href="{% url 'model:show'  %}?name={{ name }}&score={{ score }}" class="list-group-item">
+            <span class="badge">{{ score }}</span>
+            {{ name }}
+        </a>
+        {% endfor %}
+    </div>
+    <div>
+        <h2 align="center">IP:{{ ip }}---DUBUG:{{ settings.DEBUG }}</h2>
+        {% block user %}{% endblock %}
+    </div>
+</div>
+</body>
+</html>
