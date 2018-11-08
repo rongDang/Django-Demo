@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>模型的增删改查</title>
+    <link rel="stylesheet" href="{% static 'nick/css/bootstrap.min.css'%}" >
+</head>
+<body>
+<div class="container" style="padding-top: 20px">
+    <p>查找所有数据的sql:{{ sql }}</p>
+    <h2 align="center">数据查询结果: {{ number }} 条</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>sex</th>
+                <th>phone</th>
+            </tr>
+        </thead>
+        {% for i in stu_info %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.sex }}</td>
+                <td>{{ i.tel }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <hr/>
+{#    <table class="table table-bordered">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>name</th>#}
+{#                <th>C</th>#}
+{#                <th></th>#}
+{#                <th>phone</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        {% for i in stu_info %}#}
+{#            <tr>#}
+{#                <td>{{ i.id }}</td>#}
+{#                <td>{{ i.name }}</td>#}
+{#                <td>{{ i.sex }}</td>#}
+{#                <td>{{ i.tel }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
+</div>
+</body>
+</html>
