@@ -8,6 +8,8 @@ from model.models import *
 class Student_Admin(admin.ModelAdmin):
     # 设置要显示在界面中的字段
     list_display = ('id', 'name', 'sex', 'tel')
+    # 添加可以修改的字段
+    # list_editable = ('name', 'sex', 'tel')
     # 每页显示的条数
     list_per_page = 10
     # 根据id排序

@@ -11,5 +11,6 @@ urlpatterns = [
     path('work/', views.work, name='work'),
     path('show_work/', views.show_work, name='show'),
     path('delete/', views.delete, name='delete'),
+    path('CURD/', views.CRUD),
 ]
 

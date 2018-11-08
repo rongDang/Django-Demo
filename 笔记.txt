@@ -115,3 +115,14 @@
 ctrl+shift+r 不使用缓存加载一个文件
 
 笔记关于Django2.1的新特性，Django2.1将不再支持MySQL5.5版本
+
+Django 中的外键关联
+    Django中model的外键，有外键字段的那个表是从表，被关联的表是主表，主表中的某条数据删除了，对应的从表中的数据也会被删除
+    但是从表中的数据删除不会影响主表的数据(可以到admin后天操作表来查看具体的操作)
+
+aggregate 聚合 记数，求和，平均数等
+    from django.db.models import Count, Avg, Sum
+
+aggregate()用于属于QuerySet整个对象的汇总值，结果是{"name":"value"}字典类型。
+而annotate()函数可以为QuerySet中的每个对象生成一个独立的摘要，输出的结果仍然是一个QuerySet对象，
+能够调用filter()、order_by()甚至annotate()
