@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nick/css/bootstrap.min.css'%}" >
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/angular.min.js' %}"></script>
+    <script>
+    //控制器,改变angularjs的标签，或者使用djagno的 verbatiml 来取消
+    var app = angular.module('myApp', []).config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('{$');
+        $interpolateProvider.endSymbol('$}');
+    });
+    app.controller('myCtrl', ["$scope", function (scope) {
+        scope.score = "12";
+        scope.$watch('score',function () {
+            $.ajax({
+                url:"{% url 'model:work3' %}",
+                type: "GET",
+                dataType: "json",
+                data: {"id":scope.score},
+                success:function (data) {
+                    scope.score = data;
+                    alert(scope.score);
+                    $('#Modal').modal('toggle');
+                },error:function () {
+                    alert("异常")
+                }
+            })
+        });
+    }]);
+</script>
+
+</head>
+<body>
+<div class="container" ng-app="myApp" ng-controller="myCtrl">
+    <!--显示学生-->
+    <div class="row" style="padding-top: 20px">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>sex</th>
+                    <th>tel</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in student %}
+                    <tr class="select" id="{{ i.id }}" ng-click="score={{ i.id }}">
+                        <td>{{ i.id }}</td>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.sex }}</td>
+                        <td>{{ i.tel }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2>{$ score $}</h2>
+    </div>
+    <!--显示成绩模态框-->
+    <div class="col-md-12 col-md-offset-4">
+        <div class="modal fade" id="Modal" tabindex="0" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+            <!--role是设置该div是什么类型，这里设置为一个窗口-->
+            <div class="modal-dialog" role="document">
+                <!--模态框的所有内容-->
+                <div class="modal-content">
+                    <!--模态框的头部-->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">成绩</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>C</th>
+                                    <th>python</th>
+                                    <th>Django</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in score">
+                                    <td>{$ x $}</td>
+                                    <td>{$ x.id $}</td>
+                                    <td>{$ x.C $}</td>
+                                    <td>{$ x.python $}</td>
+                                    <td>{$ x.Django $}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--模态框的脚部-->
+                    <div class="modal-footer">
+                        <!--设置退出模态框属性，data-dismiss="modal"-->
+                        <button type="button" class="btn btn-default" data-dismiss="modal">退出</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -31,7 +31,7 @@
         $(".btn").click(function () {
             var id = $(this).attr("id");
             $.ajax({
-                url:"{% url 'model:delete' %}",
+                url:"{% url 'model:show' %}",
                 type: "POST",
                 dataType: "json",
                 //"csrfmiddlewaretoken" 是给Ajax添加csrf验证

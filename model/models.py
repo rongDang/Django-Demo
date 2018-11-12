@@ -13,9 +13,9 @@ class Shop(models.Model):
 
 
 class Scoce(models.Model):
-    C = models.IntegerField()
-    python = models.IntegerField()
-    Django = models.IntegerField()
+    C = models.IntegerField(default=0)
+    python = models.IntegerField(default=0)
+    Django = models.IntegerField(default=0)
     # on_delete=models.CASCADE 是联级删除，主表(Student)删除了，从表(Scoce)链接的数据也会被删除
     Student = models.ForeignKey('Student', on_delete=models.CASCADE)
 

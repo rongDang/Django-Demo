@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>学生成绩查询</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nick/css/bootstrap.min.css'%}" >
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/angular.min.js' %}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                查看成绩
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                {% for st in student %}
+                    <li><a href="{% url 'model:work2' %}?id={{ st.id }}">{{ st.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal">添加成绩</a>
+        </div>
+    </div>
+    <!--成绩显示-->
+    <div class="row" style="padding-top: 20px">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>C</th>
+                    <th>python</th>
+                    <th>Django</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in score %}
+                    <tr>
+                        <td>{{ i.C }}</td>
+                        <td>{{ i.python }}</td>
+                        <td>{{ i.Django }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!--添加成绩模态框-->
+    <div class="col-md-12 col-md-offset-4">
+        <div class="modal fade" id="myModal" tabindex="0" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+            <!--role是设置该div是什么类型，这里设置为一个窗口-->
+            <div class="modal-dialog" role="document">
+                <!--模态框的所有内容-->
+                <div class="modal-content">
+                    <!--模态框的头部-->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">添加成绩</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="C">C</label>
+                            <input type="text" class="form-control" id="C">
+                        </div>
+                        <div class="form-group">
+                            <label for="python">python</label>
+                            <input type="email" class="form-control" id="python">
+                        </div>
+                        <div class="form-group">
+                            <label for="Django">Django</label>
+                            <input type="email" class="form-control" id="Django">
+                        </div>
+                    </div>
+                    <!--模态框的脚部-->
+                    <div class="modal-footer">
+                        <!--设置退出模态框属性，data-dismiss="modal"-->
+                        <button type="button" class="btn btn-default" data-dismiss="modal">退出</button>
+                        <button type="button" class="btn btn-primary">保存成绩</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    http({
+        method:"POST",
+        url:"{% url 'model:work3' %}",
+        data: {"id":id,"csrfmiddlewaretoken":"{{ csrf_token }}"},
+    }).then(function success(data) {
+        alert(data)
+    },function error() {
+    });
+    $('.btn-primary').click(function () {
+        var C = $('#C').val();var python = $('#python').val();
+        var django = $('#Django').val();var id = "{{ id }}";
+        if (id=="None"){
+            alert("请选则一个学生")
+        }else {
+            $.ajax({
+                url:"{% url 'model:work2' %}",
+                type: "POST",
+                dataType: "json",
+                //"csrfmiddlewaretoken" 是给Ajax添加csrf验证
+                data: {"id":id,"c": C,"python":python,"django":django,"csrfmiddlewaretoken":"{{ csrf_token }}"},
+                success:function () {
+                    location.href='{% url 'model:work2' %}'
+                },error:function () {
+                    alert("异常")
+                }
+            })
+        }
+    })
+</script>
+</html>
