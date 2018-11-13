@@ -7,31 +7,7 @@
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/angular.min.js' %}"></script>
-    <script>
-    //控制器,改变angularjs的标签，或者使用djagno的 verbatiml 来取消
-    var app = angular.module('myApp', []).config(function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('{$');
-        $interpolateProvider.endSymbol('$}');
-    });
-    app.controller('myCtrl', ["$scope", function (scope) {
-        scope.score = "12";
-        scope.$watch('score',function () {
-            $.ajax({
-                url:"{% url 'model:work3' %}",
-                type: "GET",
-                dataType: "json",
-                data: {"id":scope.score},
-                success:function (data) {
-                    scope.score = data;
-                    alert(scope.score);
-                    $('#Modal').modal('toggle');
-                },error:function () {
-                    alert("异常")
-                }
-            })
-        });
-    }]);
-</script>
+
 
 </head>
 <body>
@@ -49,7 +25,7 @@
             </thead>
             <tbody>
                 {% for i in student %}
-                    <tr class="select" id="{{ i.id }}" ng-click="score={{ i.id }}">
+                    <tr class="select" id="{{ i.id }}" ng-click="score({{ i.id }})">
                         <td>{{ i.id }}</td>
                         <td>{{ i.name }}</td>
                         <td>{{ i.sex }}</td>
@@ -58,7 +34,6 @@
                 {% endfor %}
             </tbody>
         </table>
-        <h2>{$ score $}</h2>
     </div>
     <!--显示成绩模态框-->
     <div class="col-md-12 col-md-offset-4">
@@ -85,8 +60,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="x in score">
-                                    <td>{$ x $}</td>
+                                <tr ng-repeat="x in data">
                                     <td>{$ x.id $}</td>
                                     <td>{$ x.C $}</td>
                                     <td>{$ x.python $}</td>
@@ -105,6 +79,26 @@
         </div>
     </div>
 </div>
-
+<script>
+    //控制器,改变angularjs的标签，或者使用djagno的 verbatiml 来取消
+    var app = angular.module('myApp', []).config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('{$');
+        $interpolateProvider.endSymbol('$}');
+    });
+    app.controller('myCtrl', ["$scope","$http", function (scope,http) {
+        scope.data = 0;
+        scope.score = function(id){
+            http({
+                method:"GET",
+                url:"{% url 'model:work3' %}?id="+id,
+            }).then(function success(response) {
+                scope.data = response.data;
+                $("#Modal").modal("toggle")
+            },function error() {
+                alert("错误")
+            })
+        };
+    }]);
+</script>
 </body>
 </html>

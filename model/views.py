@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.db import connection
 from model.models import *
 from django.db.models import Count, Avg, Sum
-
+import json
 
 def index(request):
     # 从链接中获得参数，参数为model则跳转到model的首页中去
@@ -54,12 +54,11 @@ def work2(request):
     return render(request, 'model/work2.html', locals())
 
 
-import json
+# 作业2
 def work3(request):
     id = request.GET.get("id")
     if id:
         score = list(Scoce.objects.filter(Student_id=id).values('id', 'C', 'Django', 'python'))
-        print(json.dumps(score))
         return HttpResponse(json.dumps(score))
     student = Student.objects.filter()
     return render(request, 'model/work3.html', locals())

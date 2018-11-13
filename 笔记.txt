@@ -148,3 +148,14 @@ aggregate 聚合 记数，求和，平均数等
     # Person.objects.filter(name__iregex="^abc")# 正则表达式不区分大小写,filter是找出满足条件的，当然也有排除符合某条件的
     # Person.objects.exclude(name__contains="WZ") # 排除包含 WZ 的Person对象
     # Person.objects.filter(name__contains="abc").exclude(age=100)
+
+
+AngularJS和Django一起使用时变量标签有冲突，Django中使用{{}}来包裹变量，AngularJS也一样，
+所以需要设置AngularJS使用和Django不一样的变量标签:
+var app = angular.module('myApp', []).config(function ($interpolateProvider) {
+    $interpolateProvider.startSymbol('{$');
+    $interpolateProvider.endSymbol('$}');
+});
+或者将使用到AngualrJS变量的代码使用 {% verbatiml %}{% endverbatiml %}来包裹，包裹中的函数无法使用Djagno的{{}}变量
+
+AngularJS 中的watch使用需要注意，它会一直检测脏值的变化，只要有变化就会执行watch中的代码
