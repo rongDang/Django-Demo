@@ -50,6 +50,18 @@
     </table>
     <p>查询名字为 <strong>小红</strong> 的数据:{{ one }}</p>
     <p>名字中包含 <strong>小</strong> 的数据:{{ two }}</p>
+    <p>python成绩降序 :{{ result }}</p><hr/>
+    <h2>查询python平均成绩大于60的同学的id和平均成绩</h2>
+    {% for i in result1 %}
+        <p>id:{{ i.id }}, name:{{ i.name }}, python_avg:{{ i.python }}</p>
+    {% endfor %}
+    <h2>查询所有同学的python成绩并且按照分数从高到低的顺序排列</h2>
+    <p>{{ result }}</p>
+    <h2>查询所有同学的id 姓名 科目数量(python) 总成绩</h2>
+    {% for i in result2 %}
+        <p>id:{{ i.id }}, name:{{ i.name }}, python:{{ i.cot }},sum:{{ i.sum }}</p>
+    {% endfor %}
+
 </div>
 </body>
 </html>

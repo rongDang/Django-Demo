@@ -128,6 +128,7 @@ aggregate 聚合 记数，求和，平均数等
 
     aggregate()用于属于QuerySet整个对象的汇总值，结果是{"name":"value"}字典类型，
     这个键name可以由我们来自定义，需要写为aggregate(***=Sum())，然后返回的就是{"***":"value"},annotate也是一样
+
     而annotate()函数可以为QuerySet中的每个对象生成一个独立的摘要，输出的结果仍然是一个QuerySet对象，
     能够调用filter()、order_by()甚至annotate(),annotate()的应用场景要比aggregate()多
 

@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from django.db import connection
 from model.models import *
-from django.db.models import Count, F
+from model.forms import MDEditorForm
+from django.db.models import Count, F, Avg, Sum
 import json, markdown
 
 
@@ -74,13 +75,19 @@ def CRUD(request):
     # aggregate函数来对数据进行运算操作,查找所有数据id的条数,
     number = Student.objects.all().aggregate(count=Count('id'))
     # 使用F函数获取python字段的值
-    Scoce.objects.filter(id=7).update(python=F('python')+10)
+    Scoce.objects.filter(id=7).update(python=F('python')+1)
     # Student和Scoce联查, 通过获取主表数据对象，通过 主表对象.***_set 来获取和主表关联的所有从表数据
-    student = Student.objects.get(id=2)
-    score = student.scoce_set.all()
+    student = Student.objects.get(id=2); score = student.scoce_set.all()
     # filter中的参数使用,具体看笔记
     one = Student.objects.filter(name__contains='小红')
     two = Student.objects.filter(name__icontains='小')
+
+    # 1.查询python平均成绩大于60的同学的id和平均成绩
+    result1 = Student.objects.annotate(python=Avg("scoce__python")).filter(python__gt=60)
+    # 2.查询所有同学的id 姓名 科目数量 总成绩
+    result2 = Student.objects.annotate(sum=Sum("scoce__python"), cot=Count("scoce__python"))
+    # 3.查询所有同学的python成绩并且按照分数从高到低的顺序排列
+    result = Student.objects.filter(scoce__python__isnull=False).order_by('-scoce__python')
     return render(request, 'model/CRUD.html', locals())
 
 
@@ -99,7 +106,10 @@ def show_bolg(request):
     return render(request, 'model/hello_bolg.html', locals())
 
 
-
+# 前端显示markdown富文本
+def show_editor(request):
+    form = MDEditorForm()
+    return render(request, 'model/editor.html', locals())
 
 
 
