@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from django.db import connection
 from model.models import *
-from django.db.models import Count, Avg, Sum
-import json
+from django.db.models import Count, F
+import json, markdown
+
 
 def index(request):
     # 从链接中获得参数，参数为model则跳转到model的首页中去
@@ -71,11 +72,34 @@ def CRUD(request):
     # values 获取字典形式的结果,values_list获取元组结果
     stu_info = Student.objects.all()
     # aggregate函数来对数据进行运算操作,查找所有数据id的条数,
-    number = Student.objects.all().aggregate(Count('id'))
+    number = Student.objects.all().aggregate(count=Count('id'))
+    # 使用F函数获取python字段的值
+    Scoce.objects.filter(id=7).update(python=F('python')+10)
     # Student和Scoce联查, 通过获取主表数据对象，通过 主表对象.***_set 来获取和主表关联的所有从表数据
     student = Student.objects.get(id=2)
     score = student.scoce_set.all()
     # filter中的参数使用,具体看笔记
-    one = Student.objects.filter(name__contains='小红').filter()
-    two = Student.objects.filter(name__icontains='小').all()
+    one = Student.objects.filter(name__contains='小红')
+    two = Student.objects.filter(name__icontains='小')
     return render(request, 'model/CRUD.html', locals())
+
+
+# markdown数据的显示，使用markdown来解析数据
+def show_bolg(request):
+    result = Shop.objects.get(id=1)
+    # 这里给markdown渲染函数传递了额外参数，它是对markdown语法的拓展，这里使用了三个拓展：extra，codehilite，toc
+    # extra本身包含许多拓展，codehilite是语法高亮拓展，toc允许我们自动生成目录。
+    content = markdown.markdown(result.content, extensions=[
+        'markdown.extensions.extra',
+        'markdown.extensions.codehilite',
+        'markdown.extensions.toc',
+    ])
+    # 上面写完只能将markdown解析出来，代码块是不能高亮的，需要pip下载Pygments，
+    # 运行代码 pygmentize -S default -f html -a .codehilite > code.css，然后就会生成一个css文件，然后再加载这个css文件
+    return render(request, 'model/hello_bolg.html', locals())
+
+
+
+
+
+

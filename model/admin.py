@@ -21,3 +21,9 @@ class Student_Admin(admin.ModelAdmin):
 class Scoce_Admin(admin.ModelAdmin):
     list_display = ('id', 'C', 'python', 'Django', 'Student')
     ordering = ('id',)
+
+
+# 注册shop模型
+@admin.register(Shop)
+class Shop_Admin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'price', 'content')

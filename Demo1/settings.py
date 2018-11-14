@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',       # 静态文件管理框架
     'model.apps.ModelConfig',           # Django应用的注册
     'nick.apps.NickConfig',
+    'mdeditor',                         # 富文本编辑器
 ]
 
 MIDDLEWARE = [

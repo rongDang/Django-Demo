@@ -124,12 +124,21 @@ Django 中的外键关联
     但是从表中的数据删除不会影响主表的数据(可以到admin后天操作表来查看具体的操作)
 
 aggregate 聚合 记数，求和，平均数等
-    from django.db.models import Count, Avg, Sum
+    from django.db.models import Count, Avg, Sum, F, Q
 
     aggregate()用于属于QuerySet整个对象的汇总值，结果是{"name":"value"}字典类型，
     这个键name可以由我们来自定义，需要写为aggregate(***=Sum())，然后返回的就是{"***":"value"},annotate也是一样
     而annotate()函数可以为QuerySet中的每个对象生成一个独立的摘要，输出的结果仍然是一个QuerySet对象，
     能够调用filter()、order_by()甚至annotate(),annotate()的应用场景要比aggregate()多
+
+    F 查询专门对 对象的某列值的操作，F()允许Django在未实际链接数据的情况下，具有对数据库字段的值的引用
+    例如：Book.objects.update(price=F("price")+20)  # 对于book表中每本书的价格都在原价格的基础上增加20元
+
+    Q 查询可以组合使用 '&','|'操作符，当一个操作符是用于两个Q的对象，它产生一个新的Q对象，Q对象可以用'~'放在前面表示否定，
+    也可以允许否定 和 不否定的形式组合。
+    例：Book.objects.filter(Q(id=3)|Q(title="Go")))  # 查询id=3或者标题是“Go”的书
+    # Q对象可以与关键字参数查询一起使用，必须把普通关键字查询放到Q对象查询的后面
+    Book.objects.filter(Q(price=70)|Q(title="Python"), publication_date="2017-09-26")
 
 多表联查
     在我的练习中创建了Student和Scoce两个表，其中Student的主键和Scoce中的外键关联，所以Scoce是Student的从表。
@@ -148,6 +157,12 @@ aggregate 聚合 记数，求和，平均数等
     # Person.objects.filter(name__iregex="^abc")# 正则表达式不区分大小写,filter是找出满足条件的，当然也有排除符合某条件的
     # Person.objects.exclude(name__contains="WZ") # 排除包含 WZ 的Person对象
     # Person.objects.filter(name__contains="abc").exclude(age=100)
+    # in 是否包含在范围内: filter(pk__in=[2, 4, 6, 8, 10])
+    # 注： 以上四个前面加上i, 就表示不区分大小写, iexact, icontains, istartswith, iendswith
+    # 为空判断：isnull ，isnotnull
+    # 是否为空:filter(sname__isnull=Flase)
+    # 比较运算：gt:大于, gte:大于等于, lt:小于, lte:小于等于, filter(sage_gt=90):年龄大于90
+    # 时间查询：year / month / day / week_day / hour / minute / second   :filter(lastTime__year=2017)
 
 
 AngularJS和Django一起使用时变量标签有冲突，Django中使用{{}}来包裹变量，AngularJS也一样，
@@ -159,3 +174,27 @@ var app = angular.module('myApp', []).config(function ($interpolateProvider) {
 或者将使用到AngualrJS变量的代码使用 {% verbatiml %}{% endverbatiml %}来包裹，包裹中的函数无法使用Djagno的{{}}变量
 
 AngularJS 中的watch使用需要注意，它会一直检测脏值的变化，只要有变化就会执行watch中的代码
+
+获取model中的数据，对于queryset类型数据进行序列化
+方法一：查询的类型是未知的
+    from django.core import serializers
+
+    values = student.objects.all()  # 或者使用values = list(student.objects.values())
+    data = serializers.serialize("json", values) # 此时的data就是一个json类型的数据
+
+方法二：查询的数据是已知的，且包含不能序列化的数据，例如datetime，time等类型时需要自己定义cls
+    import json
+    from datetime import date
+    from datetime import datetime
+
+    class JsonCustomEncoder(json.JSONEnocoder):
+        def default(self, field):
+            if isinstance(field, datetime):
+                return field.strftime('%Y-%m-%d %H:%M:%S')
+            elif isinstance(fiels, date):
+                return field.strftime('%Y-%m-%d')
+            else:
+                return json.JSONEncoder.default(self, field)
+
+    values = list(student.object.values())
+    data = json.dumps(values, cls=JsonCustomEncoder)

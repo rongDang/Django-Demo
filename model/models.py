@@ -1,4 +1,5 @@
 from django.db import models
+from mdeditor.fields import MDTextField
 
 
 class Shop(models.Model):
@@ -6,6 +7,8 @@ class Shop(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=15)
     price = models.IntegerField()
+    # 这个是markdown的字段，保存我们的写的博客内容
+    content = MDTextField()
 
     # 解决显示不明确的项目标题
     def __str__(self):
