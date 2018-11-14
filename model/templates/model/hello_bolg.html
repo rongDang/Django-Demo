@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'model/css/code.css' %}">
+</head>
+<body>
+<!--前端显示markdown需要使用safe过滤器-->
+<div class="container">{{ content|safe }}</div>
+</body>
+</html>
