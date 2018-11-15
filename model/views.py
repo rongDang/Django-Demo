@@ -11,7 +11,10 @@ def index(request):
     # 从链接中获得参数，参数为model则跳转到model的首页中去
     if request.GET.get("name") == "nick":
         return redirect(reverse("nick:main"))
-    return render(request, 'model/index.html')
+    elif request.GET.get("id"):
+        return
+    bolg = Shop.objects.all().values('id', 'name')
+    return render(request, 'model/index.html', locals())
 
 
 def year(request, year):
@@ -92,8 +95,8 @@ def CRUD(request):
 
 
 # markdown数据的显示，使用markdown来解析数据
-def show_bolg(request):
-    result = Shop.objects.get(id=1)
+def show_bolg(request, id):
+    result = Shop.objects.get(id=id)
     # 这里给markdown渲染函数传递了额外参数，它是对markdown语法的拓展，这里使用了三个拓展：extra，codehilite，toc
     # extra本身包含许多拓展，codehilite是语法高亮拓展，toc允许我们自动生成目录。
     content = markdown.markdown(result.content, extensions=[
@@ -108,6 +111,7 @@ def show_bolg(request):
 
 # 前端显示markdown富文本
 def show_editor(request):
+    # 表单显示，未排版
     form = MDEditorForm()
     return render(request, 'model/editor.html', locals())
 

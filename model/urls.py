@@ -13,7 +13,7 @@ urlpatterns = [
     path('CURD/', views.CRUD),
     path('work2/', views.work2, name='work2'),
     path('work3/', views.work3, name='work3'),
-    path('one/', views.show_bolg),
+    path('one/<id>', views.show_bolg, name='blog'),
     path('editor/', views.show_editor, name='editor'),
 ]
 

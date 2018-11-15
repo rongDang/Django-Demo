@@ -2,8 +2,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
+<div class="container">
     <h1 align="center">model的首页</h1>
+    {% for b in bolg %}
+    <a style="align-content: center" href="{% url 'model:blog' b.id %}">{{ b.name }}</a>
+    {% endfor %}
+</div>
 </body>
 </html>
