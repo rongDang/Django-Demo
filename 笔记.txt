@@ -199,3 +199,31 @@ AngularJS 中的watch使用需要注意，它会一直检测脏值的变化，�
 
     values = list(student.object.values())
     data = json.dumps(values, cls=JsonCustomEncoder)
+
+
+在Django2.1中，如果你将模板文件，静态文件与媒体资源放在应用下，在访问资源时，Django会自动寻找，不用设置
+templates   # 模板文件
+static      # 静态文件
+media       # 媒体资源文件
+
+多个app应用不好管理的话，可以在项目下创建一个apps，然后将应用移动到apps下，移动时会有提示，不要选择Search for references
+移动后，右击apps文件夹，选择最下方的Mark Directory as 点击 Source Root然后apps文件夹就变颜色了
+在settings中添加:
+    import sys
+    sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

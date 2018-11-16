@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    {% load static%}
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/angular.min.js' %}"></script>
+    <style>
+        #login
+        {
+            position: absolute;
+            top:9px;
+            right:10px
+        }
+        @media (max-width: 768px) {
+            #login
+            {
+                position: absolute;
+                top:9px;
+                right:75px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <form method="post" action="{% url 'model:work4' %}">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <input type="text" name="student" class="form-control" placeholder="请输入用户名">
+                        <input type="password" name="tel" class="form-control" placeholder="请输入密码">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn-block btn btn-primary">登录</button>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#abc">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">zixing</a>
+
+                <button id="login" class="btn btn-primary" data-toggle="modal" data-target="#myModal">登录</button>
+                </div>
+                <div id="abc" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">发帖</a></li>
+                        <li><a href="#">浏览</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
