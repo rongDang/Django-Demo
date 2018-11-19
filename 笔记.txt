@@ -213,6 +213,18 @@ media       # 媒体资源文件
     sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 
+关于Django多对多的关系理解：
+    Django创建多对多的关系表，例如在nick应用中，我创建了两个模型，Boy和Girl两个模型，Girl中添加一个ManyToManyField类型的字段
+    B = models.ManyToManyFiled("Boy"),这样Boy和Girl两个表的多对多关系就创建好了，数据库迁移操作的时候，Django会在数据库中
+    再创建一个表，这个表可以看作关联两个表的纽扣，里面存放着两个外键，对应Boy和Girl表的主键
+
+    在Boy表中创建一个a，在Girl表中创建a1，a2，并且将a1，a2和Boy表中的a关联，但是删除Boy表中的a删除时，不会删除Girl表中的a1，a2
+    删除的是第三个表(Django自己创建)中a和a1，a2的关系，这样a和a1，a2没有了关系，但是a1，a2还是会存在。
+
+    所以多对多关系只是帮我们多做了一步嵌套子查询，通过第三个表来关联前两个表
+
+关于Mdeditor富文本编辑器中图片大小的设置：
+    选择上传图片后，复制图片地址，然后写到<img>标签中然后设置大小，markdown实时预览不会显示出图片，但是在网页渲染时会显示出图片
 
 
 

@@ -25,4 +25,5 @@ def show(request, msg):
 
 
 def blog_index(request):
-    return render(request, 'nick/index.html')
+    title = "测试标题，数据库中获取"
+    return render(request, 'nick/index.html', locals())

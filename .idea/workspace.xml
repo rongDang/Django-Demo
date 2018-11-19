@@ -2,124 +2,101 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca5ccd83-25a7-418d-b6fd-bbeccb2b9c10" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/css/all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/css/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/css/nest.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/css/pygment.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-02a7f5c491cda3d79832291d9f0903a1086ad308.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-0780068aad6429b678dbfc89a831016b16efa340.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-082d935809ff8624c407f5ebfa9f707031f6871d.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-0843ae9e7843eae6a72c5b8f28d4dd6e5106f516.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-101147f1175d6b5ffc2f79f8a3f64a0d7f94e418.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-14a380d9ddfdee7aecf38c241c450bfe813d94e5.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-1771169127bd9e07adbb7c767f2804f20ab73745.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-231fcd661359bf887f4f24566723a0d640c015ad.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-256fc89d0e1b746440955b22d1792532cd9c8b28.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-257209387d9006aad15c25e62a999102d74e2d34.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-30e035a07a13db060570f5382a749e6150963c7d.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3601b8c8df77687232aa48455f95585cd02a1c20.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3823779db9f51a34658809ce66bdd6ed1145ed8e.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-38448be4db4d82e2ccf22e2527f6e7831b053b30.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3a9baf0916be2f57d8dc0edb6ac1d62584613628.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3cd7287c1f241c0bd6df553af45ef1459dea2a29.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3d488e790bbea9ba0975ddd77ad8378510caee01.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-42286008c766c2fa87d1b3dfa90d8d9f273e580a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-4b163b622b3cfc64eacdb3a24f485d58be1bdbae.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-510e65d731654fda529690b06e382db085b612e3.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-5147015c86d27c3dce7724fc177e7543eda86c0d.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-57690d9bdac0b609a7a309afa66d228213b7967a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-58f09077c668b82398e90f3104c01a9bdf3b3b40.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-5d011e60828f77f264c3305324cd6179e74d59ab.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-5d71d1757bb745b55a9eb47f628062753cb5b58c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6058911ac41968c2164c6a3ba59cc884939c2511.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-618b78a8f6ffe7e1998eab67268859e2ab54be8e.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6430a52dab446fc805d3f5b1221bf9a38e154d3b.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6aa866c008a8bb532458b049ab255945e286940a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6c118f4639d3ee03a0c1cce2a6047ccb5e4b6dac.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6cd331cfa6a58dd852a22e42276a2dd2e1445ae6.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-797e92ab741300e5bd43f45ae934f2b2a7b137e6.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-808769b38614943b5116b559ac7528386b7cb020.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-829b0eefbb7ba0be775b7d741d0c41978a20a481.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-85e3ce3d35d4e067d1f533d1aab7a8e0ee51a963.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-8ed28b622974c995298647854f054668863021d1.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-92d2e645589fad0f22b789b050928dea5db6bc3b.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-95486a9c61867ecd4b703703ff4343306c16e03b.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-95618ec1cef0a5becd89ad80bff3d140a358b6ad.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-9ead99d8fbb79a1f78c2ed07bc1f1aee1e4866ba.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-9ee51d47218830874fc05f4a0c1970392608ede0.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-a590b0edc76d8942dd06ba85279414d91af85f43.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-a824a9f6a32d64bcd79534ad310703b5ff94d24e.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-aeac2c6d52f83f11761dad079a4b4ce67b1985ed.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-af9bb31cbe924f6f4742cda969cfa46ee92bdb8a.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-b3601a97e762646a1e17e821ac947646a686f38d.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-b606fc8cefcb8c9b9e11cd25c3d04864893a5651.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-bae60a4ef6c2573e304d448d4478294c0ba7778f.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-c2a6cdc1dc4d57eef444571f285fd73ad164fdb1.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-cb44fe2b2923f938486e2c5f7f0fa7a00bbd24d2.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-cc5e3ec30d0402200e3c1905a44ea5d37d543368.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-cc9bc768c595f045f6a31340c763c5e494e0ee0e.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ccbe7ac33491ce00e73dd57ddfee63f24121bf4b.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ce6f0578fc94b8e05a1eaf537c2587e938f2a158.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-d0eeac030704f91d16e2201d107d7ee8a2c1dd2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-d2f58eb442c4d4f47f2bf2950560a1e56ef02b76.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-d4d19ed3a763ce10e050662542bc0318bb620096.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-e3fd16403f24a08113a25694375f81f33c5a258c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-e78854b43389426899362d164d53fbf48274b93a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-e839476c7410d2f694c65d3944604ad28914ca2f.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-e9d0949ee599c94d4f310e35793abe016cb7e86b.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ebd05b36b3d9ee7ed2cbcee6cdf5796ce05d839c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ec2590bc030c185025fbc09afe2f268af6e38985.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ee96f92c030d0e35d631a16c507a7a269e9594b5.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-f06dff19fbba12718cd431381a1dd1202bd13763.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/templates/nick/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nick/templates/nick/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Demo1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Demo1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6fc3ef88-4f6f-4a5d-82c0-4190d90ac03a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6fc3ef88-4f6f-4a5d-82c0-4190d90ac03a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/css/blog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/img/162.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/img/bg4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/img/footer-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/nick/static/nick/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/code.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demo1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo1/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/migrations/0002_auto_20181106_0944.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/migrations/0003_auto_20181107_2003.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/migrations/0004_auto_20181110_2121.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/migrations/0005_shop_content.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/static/model/css/code.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/templates/model/CRUD.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/templates/model/editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/templates/model/hello_bolg.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/templates/model/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/templates/model/show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/templates/model/work1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/templates/model/work2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/templates/model/work3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/templates/nick/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/templates/nick/show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/templatetags/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/templatetags/myFilter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nick/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo1/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/model/templates/model/CRUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/model/templates/model/CRUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/model/templates/model/work2.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/model/templates/model/work2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/model/templates/model/work3.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/model/templates/model/work3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nick/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nick/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/css/fonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/css/nest.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/css/pygment.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-02a7f5c491cda3d79832291d9f0903a1086ad308.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-0780068aad6429b678dbfc89a831016b16efa340.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-082d935809ff8624c407f5ebfa9f707031f6871d.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-0843ae9e7843eae6a72c5b8f28d4dd6e5106f516.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-101147f1175d6b5ffc2f79f8a3f64a0d7f94e418.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-14a380d9ddfdee7aecf38c241c450bfe813d94e5.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-1771169127bd9e07adbb7c767f2804f20ab73745.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-231fcd661359bf887f4f24566723a0d640c015ad.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-256fc89d0e1b746440955b22d1792532cd9c8b28.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-257209387d9006aad15c25e62a999102d74e2d34.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-30e035a07a13db060570f5382a749e6150963c7d.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3601b8c8df77687232aa48455f95585cd02a1c20.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3823779db9f51a34658809ce66bdd6ed1145ed8e.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-38448be4db4d82e2ccf22e2527f6e7831b053b30.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3a9baf0916be2f57d8dc0edb6ac1d62584613628.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3cd7287c1f241c0bd6df553af45ef1459dea2a29.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-3d488e790bbea9ba0975ddd77ad8378510caee01.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-42286008c766c2fa87d1b3dfa90d8d9f273e580a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-4b163b622b3cfc64eacdb3a24f485d58be1bdbae.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-510e65d731654fda529690b06e382db085b612e3.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-5147015c86d27c3dce7724fc177e7543eda86c0d.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-57690d9bdac0b609a7a309afa66d228213b7967a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-58f09077c668b82398e90f3104c01a9bdf3b3b40.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-5d011e60828f77f264c3305324cd6179e74d59ab.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-5d71d1757bb745b55a9eb47f628062753cb5b58c.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6058911ac41968c2164c6a3ba59cc884939c2511.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-618b78a8f6ffe7e1998eab67268859e2ab54be8e.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6430a52dab446fc805d3f5b1221bf9a38e154d3b.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6aa866c008a8bb532458b049ab255945e286940a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6c118f4639d3ee03a0c1cce2a6047ccb5e4b6dac.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-6cd331cfa6a58dd852a22e42276a2dd2e1445ae6.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-797e92ab741300e5bd43f45ae934f2b2a7b137e6.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-808769b38614943b5116b559ac7528386b7cb020.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-829b0eefbb7ba0be775b7d741d0c41978a20a481.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-85e3ce3d35d4e067d1f533d1aab7a8e0ee51a963.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-8ed28b622974c995298647854f054668863021d1.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-92d2e645589fad0f22b789b050928dea5db6bc3b.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-95486a9c61867ecd4b703703ff4343306c16e03b.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-95618ec1cef0a5becd89ad80bff3d140a358b6ad.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-9ead99d8fbb79a1f78c2ed07bc1f1aee1e4866ba.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-9ee51d47218830874fc05f4a0c1970392608ede0.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-a590b0edc76d8942dd06ba85279414d91af85f43.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-a824a9f6a32d64bcd79534ad310703b5ff94d24e.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-aeac2c6d52f83f11761dad079a4b4ce67b1985ed.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-af9bb31cbe924f6f4742cda969cfa46ee92bdb8a.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-b3601a97e762646a1e17e821ac947646a686f38d.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-b606fc8cefcb8c9b9e11cd25c3d04864893a5651.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-bae60a4ef6c2573e304d448d4478294c0ba7778f.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-c2a6cdc1dc4d57eef444571f285fd73ad164fdb1.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-cb44fe2b2923f938486e2c5f7f0fa7a00bbd24d2.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-cc5e3ec30d0402200e3c1905a44ea5d37d543368.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-cc9bc768c595f045f6a31340c763c5e494e0ee0e.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ccbe7ac33491ce00e73dd57ddfee63f24121bf4b.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ce6f0578fc94b8e05a1eaf537c2587e938f2a158.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-d0eeac030704f91d16e2201d107d7ee8a2c1dd2a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-d2f58eb442c4d4f47f2bf2950560a1e56ef02b76.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-d4d19ed3a763ce10e050662542bc0318bb620096.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-e3fd16403f24a08113a25694375f81f33c5a258c.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-e78854b43389426899362d164d53fbf48274b93a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-e839476c7410d2f694c65d3944604ad28914ca2f.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-e9d0949ee599c94d4f310e35793abe016cb7e86b.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ebd05b36b3d9ee7ed2cbcee6cdf5796ce05d839c.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ec2590bc030c185025fbc09afe2f268af6e38985.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ee96f92c030d0e35d631a16c507a7a269e9594b5.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-f06dff19fbba12718cd431381a1dd1202bd13763.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/templates/nick/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nick/templates/nick/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/templates/nick/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nick/templates/nick/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/templates/nick/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nick/templates/nick/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nick/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nick/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/笔记.txt" beforeDir="false" afterPath="$PROJECT_DIR$/笔记.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -178,10 +155,12 @@
           <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
@@ -190,51 +169,54 @@
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="brand" value="3" />
-          <entry key="css" value="15" />
+          <entry key="css" value="43" />
           <entry key="gif" value="1" />
-          <entry key="html" value="52" />
+          <entry key="html" value="61" />
           <entry key="ico" value="1" />
-          <entry key="jpg" value="2" />
+          <entry key="jpg" value="4" />
           <entry key="js" value="12" />
           <entry key="model_shop" value="1" />
           <entry key="model_student" value="1" />
-          <entry key="py" value="90" />
+          <entry key="png" value="3" />
+          <entry key="py" value="110" />
           <entry key="sql" value="2" />
           <entry key="student" value="1" />
-          <entry key="txt" value="5" />
+          <entry key="txt" value="6" />
           <entry key="woff2" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="15" />
+          <entry key="CSS" value="43" />
           <entry key="Database Element" value="6" />
-          <entry key="HTML" value="52" />
-          <entry key="Image" value="4" />
+          <entry key="HTML" value="61" />
+          <entry key="Image" value="9" />
           <entry key="JavaScript" value="12" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="90" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="110" />
           <entry key="Scratch" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="5479" />
-          <entry key="py" value="9884" />
-          <entry key="txt" value="6115" />
+          <entry key="css" value="39" />
+          <entry key="html" value="6002" />
+          <entry key="py" value="11104" />
+          <entry key="txt" value="6870" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="5479" />
-          <entry key="PLAIN_TEXT" value="6115" />
-          <entry key="Python" value="9884" />
+          <entry key="CSS" value="39" />
+          <entry key="HTML" value="6002" />
+          <entry key="PLAIN_TEXT" value="6870" />
+          <entry key="Python" value="11104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -247,35 +229,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Demo1/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/model/apps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/model/views.py">
+        <entry file="file://$PROJECT_DIR$/apps/nick/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="365">
-              <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
+              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
               <folding>
-                <element signature="e#0#54#0" expanded="true" />
-                <marker date="1542279518010" expanded="true" signature="663:668" ph="..." />
-                <marker date="1542279518010" expanded="true" signature="1052:1057" ph="..." />
-                <marker date="1542279518010" expanded="true" signature="1109:1111" ph="..." />
-                <marker date="1542279518010" expanded="true" signature="2054:2417" ph="..." />
-                <marker date="1542279518010" expanded="true" signature="2367:2417" ph="..." />
+                <element signature="e#0#28#0" expanded="true" />
+                <marker date="1542629935082" expanded="true" signature="140:145" ph="..." />
+                <marker date="1542629935082" expanded="true" signature="268:273" ph="..." />
+                <marker date="1542629935082" expanded="true" signature="541:618" ph="..." />
+                <marker date="1542629935082" expanded="true" signature="688:892" ph="..." />
+                <marker date="1542629935082" expanded="true" signature="917:922" ph="..." />
               </folding>
             </state>
           </provider>
@@ -284,22 +248,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/nick/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="288">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/nick/views.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/nick/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            <state relative-caret-position="581">
+              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding>
-                <element signature="e#0#54#0" expanded="true" />
-                <element signature="e#144#384#0" />
-                <element signature="e#415#885#0" />
-                <marker date="1542283896917" expanded="true" signature="910:915" ph="..." />
+                <element signature="e#0#32#0" expanded="true" />
+                <marker date="1542629172008" expanded="true" signature="189:194" ph="..." />
+                <marker date="1542629172008" expanded="true" signature="287:288" ph="..." />
+                <marker date="1542629172008" expanded="true" signature="575:664" ph="..." />
               </folding>
             </state>
           </provider>
@@ -308,17 +272,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="15" column="30" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-576">
-              <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            <state relative-caret-position="307">
+              <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+              <folding>
+                <element signature="e#2521#2527#0#HTML" expanded="true" />
+                <element signature="e#2527#2533#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -326,8 +285,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/笔记.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="203" column="19" selection-start-line="203" selection-start-column="19" selection-end-line="203" selection-end-column="19" />
+            <state relative-caret-position="8136">
+              <caret line="226" column="27" selection-start-line="226" selection-start-column="27" selection-end-line="226" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/css/blog.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="148" selection-start-line="148" selection-end-line="148" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/nick/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="581">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+                <marker date="1542599454899" expanded="true" signature="936:941" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/model/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="116" column="34" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+                <marker date="1542279518010" expanded="true" signature="663:668" ph="..." />
+                <marker date="1542279518010" expanded="true" signature="1052:1057" ph="..." />
+                <marker date="1542279518010" expanded="true" signature="1109:1111" ph="..." />
+                <marker date="1542279518010" expanded="true" signature="2054:2417" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="13" column="57" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -337,14 +343,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>btn-primary</find>
+      <find>bg</find>
+      <find>na</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -371,7 +379,6 @@
         <option value="$PROJECT_DIR$/model/forms.py" />
         <option value="$PROJECT_DIR$/model/templates/model/editor.html" />
         <option value="$PROJECT_DIR$/model/tests.py" />
-        <option value="$PROJECT_DIR$/Demo1/urls.py" />
         <option value="$PROJECT_DIR$/model/templates/model/index.html" />
         <option value="$PROJECT_DIR$/model/static/model/css/code.css" />
         <option value="$PROJECT_DIR$/model/templates/model/hello_bolg.html" />
@@ -383,10 +390,20 @@
         <option value="$PROJECT_DIR$/model/__init__.py" />
         <option value="$PROJECT_DIR$/model/models.py" />
         <option value="$PROJECT_DIR$/Demo1/settings.py" />
-        <option value="$PROJECT_DIR$/笔记.txt" />
-        <option value="$PROJECT_DIR$/apps/nick/templates/nick/index.html" />
-        <option value="$PROJECT_DIR$/apps/nick/views.py" />
         <option value="$PROJECT_DIR$/apps/nick/urls.py" />
+        <option value="$PROJECT_DIR$/apps/model/views.py" />
+        <option value="$PROJECT_DIR$/apps/model/templates/model/work3.html" />
+        <option value="$PROJECT_DIR$/apps/model/templates/model/work2.html" />
+        <option value="$PROJECT_DIR$/apps/model/templates/model/CRUD.html" />
+        <option value="$PROJECT_DIR$/apps/nick/templates/nick/show.html" />
+        <option value="$PROJECT_DIR$/apps/nick/templates/nick/index.html" />
+        <option value="$PROJECT_DIR$/apps/nick/static/nick/css/blog.css" />
+        <option value="$PROJECT_DIR$/Demo1/urls.py" />
+        <option value="$PROJECT_DIR$/apps/nick/templates/nick/base.html" />
+        <option value="$PROJECT_DIR$/笔记.txt" />
+        <option value="$PROJECT_DIR$/apps/nick/admin.py" />
+        <option value="$PROJECT_DIR$/apps/nick/models.py" />
+        <option value="$PROJECT_DIR$/apps/nick/views.py" />
       </list>
     </option>
   </component>
@@ -397,10 +414,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="369" />
-    <option name="y" value="35" />
+    <option name="x" value="97" />
+    <option name="y" value="122" />
     <option name="width" value="1534" />
-    <option name="height" value="868" />
+    <option name="height" value="881" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -414,6 +431,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -430,6 +448,12 @@
               <item name="Demo1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Demo1" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Demo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="nick" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -437,22 +461,31 @@
               <item name="Demo1" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="nick" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Demo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="nick" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="nick" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Demo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="Demo1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Demo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Demo1" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Demo1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Demo1" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="nick" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Demo1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Demo1" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="nick" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="nick" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Demo1" type="b2602c69:ProjectViewProjectNode" />
@@ -462,7 +495,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,18 +509,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Work\Django-test\Django2_1\Demo1\apps" />
-      <recent name="E:\Work\Django-test\Django2_1\Demo1\model\static\model\css" />
-      <recent name="E:\Work\Django-test\Django2_1\Demo1\static\css" />
-      <recent name="E:\Work\Django-test\Django2_1\Demo1\static\js" />
-      <recent name="E:\Work\Django-test\Django2_1\Demo1\model\statci\model" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Work\Django-test\Django2_1\Demo1\apps\nick\templates\nick" />
+      <recent name="E:\Work\Django-test\Django2_1\Demo1\apps\nick\static\nick\img" />
       <recent name="E:\Work\Django-test\Django2_1\Demo1\apps\nick\static\nick" />
       <recent name="E:\Work\Django-test\Django2_1\Demo1\apps\nick\static\nick\css" />
-      <recent name="E:\Work\Django-test\Django2_1\Demo1\static\js" />
-      <recent name="E:\Work\Django-test\Django2_1\Demo1\model\static\model\js" />
+      <recent name="E:\Work\Django-test\Django2_1\Demo1\apps" />
+      <recent name="E:\Work\Django-test\Django2_1\Demo1\model\static\model\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Work\Django-test\Django2_1\Demo1\static\css" />
+      <recent name="E:\Work\Django-test\Django2_1\Demo1\apps\nick\static\nick\img" />
+      <recent name="E:\Work\Django-test\Django2_1\Demo1\apps\nick\static\nick\css" />
+      <recent name="E:\Work\Django-test\Django2_1\Demo1\apps\nick\templates\nick" />
+      <recent name="E:\Work\Django-test\Django2_1\Demo1\apps\nick\static\nick" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -583,24 +615,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="97" y="122" width="1534" height="881" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49891067" visible="true" weight="0.12473348" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891067" visible="true" weight="0.16214383" />
       <window_info id="Structure" order="1" sideWeight="0.50108933" side_tool="true" weight="0.14314653" />
       <window_info id="Favorites" order="2" sideWeight="0.50108933" side_tool="true" weight="0.14314653" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.0" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.6334056" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.4029451" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4154013" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.34273317" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.29291552" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32756326" />
-      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32756326" />
+      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3275488" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" weight="0.5195228" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.31887755" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.19522777" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.45770064" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.6182213" />
       <window_info anchor="bottom" id="manage.py@Demo1" order="14" weight="0.489154" />
@@ -609,7 +641,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.30277187" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3848614" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,161 +659,10 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/templates/model/show.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/angular.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/utils/deprecation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10340" selection-start-line="10340" selection-end-line="10340" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/contrib/admin/static/admin/js/vendor/select2/select2.full.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="4206" column="8" selection-start-line="4206" selection-start-column="8" selection-end-line="4206" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/json/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/mdeditor/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-          <folding>
-            <element signature="e#23#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/show.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/templates/model/CRUD.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/contrib/auth/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1116">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/forms/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="460" column="13" selection-start-line="460" selection-start-column="8" selection-end-line="460" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/conf/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="200" selection-start-line="200" selection-end-line="200" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/conf/urls/static.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#24#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/editor/最佳_20181115103855130705.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/model/templates/model/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Demo1/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#628#1" />
-            <element signature="e#629#661#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -801,24 +682,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/static/model/css/code1.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/model/static/model/css/code1.css" />
     <entry file="file://$PROJECT_DIR$/apps/model/static/model/css/code.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="10" column="55" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1542198923372" expanded="true" signature="440:503" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,34 +704,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/templates/model/work2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1565">
-          <caret line="93" column="15" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/templates/model/work3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="87" column="71" lean-forward="true" selection-start-line="87" selection-start-column="71" selection-end-line="87" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/model/templates/model/work1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-          <folding>
-            <element signature="n#script#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/templates/model/work4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -881,27 +725,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="e#24#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/nick/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -912,46 +739,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-            <marker date="1542279518010" expanded="true" signature="663:668" ph="..." />
-            <marker date="1542279518010" expanded="true" signature="1052:1057" ph="..." />
-            <marker date="1542279518010" expanded="true" signature="1109:1111" ph="..." />
-            <marker date="1542279518010" expanded="true" signature="2054:2417" ph="..." />
-            <marker date="1542279518010" expanded="true" signature="2367:2417" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/css/all.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ebd05b36b3d9ee7ed2cbcee6cdf5796ce05d839c.woff2">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/model/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <marker date="1542281253885" expanded="true" signature="156:161" ph="..." />
-            <marker date="1542281253885" expanded="true" signature="422:557" ph="..." />
-            <marker date="1542281253885" expanded="true" signature="648:653" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Demo1/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/fonts/opensans-ebd05b36b3d9ee7ed2cbcee6cdf5796ce05d839c.woff2" />
     <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/one.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -959,44 +747,258 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/笔记.txt">
+    <entry file="file://$PROJECT_DIR$/Demo1/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="203" column="19" selection-start-line="203" selection-start-column="19" selection-end-line="203" selection-end-column="19" />
+        <state relative-caret-position="432">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/base.html">
+    <entry file="file://$PROJECT_DIR$/apps/model/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/model/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="e#24#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/css/all.min.css" />
+    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/css/nest.css" />
+    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/mdeditor/static/css/editormd.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="809" column="1" selection-start-line="809" selection-start-column="1" selection-end-line="809" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/css/bootstrap.css" />
+    <entry file="file://$PROJECT_DIR$/apps/model/templates/model/CRUD.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/model/templates/model/work2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/model/templates/model/work3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/show.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="30" />
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/index.html">
+    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/img/footer-bg.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/contrib/admin/static/admin/css/responsive.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state relative-caret-position="297">
+          <caret line="457" column="5" selection-start-line="457" selection-start-column="5" selection-end-line="457" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/contrib/admin/static/admin/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="796" column="1" selection-start-line="796" selection-start-column="1" selection-end-line="796" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="821">
+          <caret line="4" column="117528" selection-start-line="4" selection-start-column="117528" selection-end-line="4" selection-end-column="117528" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/model/templates/model/work4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/img/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/img/bg4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/static/nick/css/blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo1/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#628#1" />
+            <element signature="e#629#661#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/model/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/model/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1476">
+          <caret line="44" column="15" lean-forward="true" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1542281253885" expanded="true" signature="156:161" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/nick/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="288">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/core/management/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="424" selection-start-line="424" selection-end-line="424" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/笔记.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8136">
+          <caret line="226" column="27" selection-start-line="226" selection-start-column="27" selection-end-line="226" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+          <folding>
+            <element signature="e#2521#2527#0#HTML" expanded="true" />
+            <element signature="e#2527#2533#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/django/db/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1303538148/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11410">
+          <caret line="4062" column="8" selection-start-line="4062" selection-start-column="8" selection-end-line="4062" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Django_env2/Lib/site-packages/mdeditor/widgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1542629172008" expanded="true" signature="189:194" ph="..." />
+            <marker date="1542629172008" expanded="true" signature="287:288" ph="..." />
+            <marker date="1542629172008" expanded="true" signature="575:664" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1542629935082" expanded="true" signature="140:145" ph="..." />
+            <marker date="1542629935082" expanded="true" signature="268:273" ph="..." />
+            <marker date="1542629935082" expanded="true" signature="541:618" ph="..." />
+            <marker date="1542629935082" expanded="true" signature="688:892" ph="..." />
+            <marker date="1542629935082" expanded="true" signature="917:922" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/code.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/nick/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        <state relative-caret-position="581">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="25" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
-            <element signature="e#144#384#0" />
-            <element signature="e#415#885#0" />
-            <marker date="1542283896917" expanded="true" signature="910:915" ph="..." />
+            <marker date="1542599454899" expanded="true" signature="936:941" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/model/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="116" column="34" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1542279518010" expanded="true" signature="663:668" ph="..." />
+            <marker date="1542279518010" expanded="true" signature="1052:1057" ph="..." />
+            <marker date="1542279518010" expanded="true" signature="1109:1111" ph="..." />
+            <marker date="1542279518010" expanded="true" signature="2054:2417" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nick/templates/nick/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="57" />
         </state>
       </provider>
     </entry>

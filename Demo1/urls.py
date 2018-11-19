@@ -33,4 +33,3 @@ urlpatterns = [
 if settings.DEBUG:
     # 配置上传静态文件的路径
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    print(urlpatterns)
