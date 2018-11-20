@@ -14,6 +14,7 @@ urlpatterns = [
     path('work2/', views.work2, name='work2'),
     path('work3/', views.work3, name='work3'),
     path('work4/', views.work4, name='work4'),
+    path('work4_1/', views.work4_1, name='work_4'),
     path('one/<id>', views.show_bolg, name='blog'),
     path('editor/', views.show_editor, name='editor'),
 ]

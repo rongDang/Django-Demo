@@ -1,0 +1,17 @@
+{% extends 'nick/base.html' %}
+
+{% block header_title %}{{ title }}{% endblock %}
+
+{% block header_subtitle %}所有的分类都在这了{% endblock %}
+
+{% block content %}
+    {% for cate in categories %}
+        <ul class="cate-list">
+            <li class="category">
+                <a href="{% url 'nick:blog_class_details' cate %}">{{cate}}</a>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}
+
+

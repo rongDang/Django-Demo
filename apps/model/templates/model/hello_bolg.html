@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'model/css/code.css' %}">
 </head>
 <body>
-<!--前端显示markdown需要使用safe过滤器-->
+<!--前端显示markdown需要使用safe过滤器,safe指不对字符串进行转义-->
 <div class="container">{{ content|safe }}</div>
 </body>
 </html>

@@ -81,6 +81,14 @@ def work4(request):
     return render(request, 'model/work4.html')
 
 
+def work4_1(request):
+    # 测试使用jQuery的post方法，在传过来的字典参数中添加csrfmiddlewaretoken: '{{ csrf_token }}'即可
+    if request.method == "POST":
+        name = request.POST["name"]
+        return HttpResponse(name)
+    return render(request, 'model/work4_1.html')
+
+
 # Django模型的操作
 def CRUD(request):
     # 查看模型执行的MySQL语句, query方法

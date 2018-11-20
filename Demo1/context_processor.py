@@ -13,3 +13,5 @@ def work_data(request):
     result = cur.fetchall()
     return {"data": result}
 
+
+

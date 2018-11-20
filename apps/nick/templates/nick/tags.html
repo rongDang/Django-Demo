@@ -1,0 +1,17 @@
+{% extends 'nick/base.html' %}
+
+{% block header_title %}{{ title }}{% endblock %}
+
+{% block header_subtitle %}所有的标签如下{% endblock %}
+
+{% block content %}
+<ul class="cate-list">
+    {% for d in tags %}
+        <li class="category" style="">
+            <a href="{% url 'nick:blog_tag' d.name %}">{{d.name}}</a>
+        </li>
+        {% empty %}
+        没有标签数据
+    {% endfor %}
+</ul>
+{% endblock %}

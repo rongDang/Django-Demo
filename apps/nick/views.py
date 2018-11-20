@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
-# Create your views here.
+from nick.models import *
+import markdown
 
 
 def index(request):
@@ -25,5 +26,44 @@ def show(request, msg):
 
 
 def blog_index(request):
-    title = "测试标题，数据库中获取"
+    blog = Blog.objects.filter().values('id', 'title', 'create_time')
     return render(request, 'nick/index.html', locals())
+
+
+def blog_content(request, title):
+    print(title)
+    data = Blog.objects.get(title=title)
+    # 正向查询该博客关联的类别，标签
+    categoty = data.category.name
+    tags = data.tag.all()
+    print(tags)
+    # 使用markdown解析数据库中的博客内容
+    content = markdown.markdown(data.content, extensions=[
+        'markdown.extensions.extra',
+        'markdown.extensions.codehilite',
+        'markdown.extensions.toc',
+    ])
+    return render(request, 'nick/content.html', locals())
+
+
+def blog_class(request, title):
+    categories = Category.objects.all()
+    return render(request, 'nick/classify.html', locals())
+
+
+def blog_class_details(request, title):
+    data = Category.objects.get(name=title)
+    # 反向查询从表blog中的数据
+    result = data.blog_set.all()
+    return render(request, 'nick/classify_details.html', locals())
+
+
+def tags(request, title):
+    tags = Tag.objects.all()
+    return render(request, 'nick/tags.html', locals())
+
+
+def tag(request, title):
+    data = Tag.objects.get(name=title)
+    result = data.blog_set.all()
+    return render(request, 'nick/tag.html', locals())

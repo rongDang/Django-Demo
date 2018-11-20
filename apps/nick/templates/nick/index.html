@@ -8,10 +8,10 @@
 {% block content %}
 <h2>所有文章</h2>
 <ul class="post-list">
-    {% for p in posts %}
+    {% for i in blog %}
         <li class="post-item">
-            <span class="post-datetime">2018-12-12</span>
-            <a href="#" class="post-link">***********</a>
+            <span class="post-datetime">{{ i.create_time }}</span>
+            <a href="{% url 'nick:blog_content' i.title %}" class="post-link">{{ i.title }}</a>
         </li>
         {% empty %}
         没有博客数据

@@ -1,6 +1,7 @@
 1,Django项目和Django应用
     Django项目是使用django-admin工具创建的项目结构，django-admin startproject myproject
     Django应用是在Django项目中的，使用Django项目的manage.py创建，python manage.py startapp myapp
+    终端创建的app需要到settings中去注册
 
 2,Django应用
     一个Django项目就是一个基于Django的Web应用，一个Django项目包含一组配置和若干个Django应用，Django应用就是一个可重用的python包
@@ -27,6 +28,8 @@
     这里和flask类似，最好不要有同名的html文件，不然会默认选则匹配第一个,官方建议：/templates/nick/***.html  这样写
     这样写的话就算别的应用中有同名的文件，Django也不会混淆
 
+小技巧：
+    python manage.py inspectdb user, 这个是通过数据库中已经有的数据库表来生成一个模型类，inspectdb 后面写数据库中的表名
 
 4,关于url中的一些路径写法:
     path('index/', views.index, name="main")
