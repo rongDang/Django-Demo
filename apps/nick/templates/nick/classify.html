@@ -5,13 +5,13 @@
 {% block header_subtitle %}所有的分类都在这了{% endblock %}
 
 {% block content %}
-    {% for cate in categories %}
-        <ul class="cate-list">
-            <li class="category">
-                <a href="{% url 'nick:blog_class_details' cate %}">{{cate}}</a>
+    <ul class="nav nav-pills" role="tablist">
+        {% for cate in categories %}
+            <li role="presentation">
+                <a href="{% url 'nick:blog_class_details' cate %}">{{cate}}<span class="badge">{{ cate.number }}</span></a>
             </li>
-        </ul>
-    {% endfor %}
+        {% endfor %}
+    </ul>
 {% endblock %}
 
 

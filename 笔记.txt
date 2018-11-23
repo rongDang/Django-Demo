@@ -182,6 +182,9 @@ AngularJS 中的watch使用需要注意，它会一直检测脏值的变化，�
 获取model中的数据，对于queryset类型数据进行序列化
 方法一：查询的类型是未知的
     from django.core import serializers
++
+
+
 
     values = student.objects.all()  # 或者使用values = list(student.objects.values())
     data = serializers.serialize("json", values) # 此时的data就是一个json类型的数据

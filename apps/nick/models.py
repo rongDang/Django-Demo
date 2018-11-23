@@ -22,6 +22,8 @@ class Girl(models.Model):
 
 class Category(models.Model):
     name = models.CharField(verbose_name="博客类别", max_length=20)
+    # number为该类别下存在多少博客
+    number = models.IntegerField(default=2)
 
     class Meta:
         verbose_name = "类别"
@@ -33,6 +35,8 @@ class Category(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(verbose_name="博客标签", max_length=20)
+    # number为对应标签下存在的博客,这里设置默认值是因为该字段是后续添加的
+    number = models.IntegerField(default=1)
 
     class Meta:
         verbose_name = "标签"
@@ -43,7 +47,7 @@ class Tag(models.Model):
 
 
 class Blog(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=50, verbose_name='标题')
     content = MDTextField(verbose_name='博客内容')
     create_time = models.DateTimeField(verbose_name='创建时间', default=timezone.now)
     click_nums = models.IntegerField(verbose_name='点击量', default=0)

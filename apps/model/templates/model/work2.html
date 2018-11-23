@@ -88,14 +88,6 @@
 
 </body>
 <script>
-    http({
-        method:"POST",
-        url:"{% url 'model:work3' %}",
-        data: {"id":id,"csrfmiddlewaretoken":"{{ csrf_token }}"},
-    }).then(function success(data) {
-        alert(data)
-    },function error() {
-    });
     $('.btn-primary').click(function () {
         var C = $('#C').val();var python = $('#python').val();
         var django = $('#Django').val();var id = "{{ id }}";

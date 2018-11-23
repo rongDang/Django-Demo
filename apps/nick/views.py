@@ -31,12 +31,10 @@ def blog_index(request):
 
 
 def blog_content(request, title):
-    print(title)
     data = Blog.objects.get(title=title)
     # 正向查询该博客关联的类别，标签
     categoty = data.category.name
     tags = data.tag.all()
-    print(tags)
     # 使用markdown解析数据库中的博客内容
     content = markdown.markdown(data.content, extensions=[
         'markdown.extensions.extra',

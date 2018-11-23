@@ -212,25 +212,6 @@ ul.post-list {
     list-style: none;
 }
 
-ul.cate-list {
-    padding: 0;
-    list-style: none;
-}
-
-li.category {
-    display: inline-block;
-    margin: 10px;
-}
-
-li.category a {
-    color: #2479CC;
-    text-decoration: none;
-    transition: all 0.2s ease-out;
-}
-li.category a:hover {
-    text-decoration: underline;
-}
-
 li.post-item {
 	padding: 3px;
 }
