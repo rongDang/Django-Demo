@@ -22,6 +22,15 @@ def show(request, msg):
     }
     array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
     names = ["小明", "小白", "小黑", "小花", "小二"]
+    # 下面为多对多关系的查询，
+    boy = Boy.objects.all()
+    for i in boy:
+        # i.girl_set.count()，逆向查询女孩的数量
+        print(i.username, i.girl_set.count())
+    girl = Girl.objects.all()
+    for i in girl:
+        # 正向查询男孩的数量
+        print(i.name, i.b.all())
     return render(request, "nick/show.html", locals())
 
 
@@ -58,6 +67,11 @@ def blog_class_details(request, title):
 
 def tags(request, title):
     tags = Tag.objects.all()
+    obj_tag_list = Tag.objects.all()
+    for obj_tag in obj_tag_list:
+        tag_number = obj_tag.blog_set.count()
+        obj_tag.number = tag_number
+        obj_tag.save()
     return render(request, 'nick/tags.html', locals())
 
 

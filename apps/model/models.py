@@ -1,6 +1,6 @@
 from django.db import models
 from mdeditor.fields import MDTextField
-
+from django.utils.html import format_html
 
 class Shop(models.Model):
     # 设置id为主键，自增，在字段中加上verbose_name那个在后台添加那个信息时，字段名会变为你写的名字

@@ -13,6 +13,7 @@ class Girl_Admin(admin.ModelAdmin):
     list_display = ('id', 'name')
 
 
+
 @admin.register(Category)
 class Category_Admin(admin.ModelAdmin):
     list_display = ('id', 'name')
@@ -26,6 +27,10 @@ class Tag_Admin(admin.ModelAdmin):
 @admin.register(Blog)
 class Blog_Admin(admin.ModelAdmin):
     list_display = ('id', 'title',  'click_nums', 'category', 'create_time')
+    fields = ('title', 'content', 'category', 'tag')    # 编辑页面中要显示的字段
+    # exclude = ('number') 在编辑页面排除该字段
+    filter_horizontal = ('tag', )   # 对页面中多对多字段排版设置
+    # 可以这样设置几个字段在一行例如：fields=(('title','tag'), 'content')这样title和tag是一行了
 
     # 重写模型保存的方法，保存博客时将该博客的分类数与标签数分别添加到对应的表中
     def save_model(self, request, obj, form, change):

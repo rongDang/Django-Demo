@@ -1,0 +1,74 @@
+Admin中的一些好用的定制
+
+settings.py文件中设置admin后台为中文：
+    LANGUAGE_CODE = 'zh-Hans' TIME_ZONE = 'Asia/Shanghai'
+
+列表页面的设置：
+  #listdisplay设置要显示在列表中的字段（id字段是Django模型的默认主键）
+    list_display = ('id', 'caption', 'author', 'publish_time')
+
+    #list_per_page设置每页显示多少条记录，默认是100条
+    list_per_page = 50
+
+    #ordering设置默认排序字段，负号表示降序排序
+    ordering = ('-publish_time',)
+
+    #list_editable 设置默认可编辑字段
+    list_editable = ['machine_room_id', 'temperature']
+
+    #fk_fields 设置显示外键字段
+    fk_fields = ('machine_room_id',)
+
+    #设置哪些字段可以点击进入编辑界面
+    list_display_links = ('id', 'caption')
+
+    #筛选器，  过滤器如果是外键需要遵循这样的语法：本表字段__外键表要显示的字段。如：“user__user_name”
+    list_filter =('trouble', 'go_time', 'act_man__user_name', 'machine_room_id__machine_room_name') #过滤器
+    search_fields =('server', 'net', 'mark') #搜索字段
+    date_hierarchy = 'go_time'    # 详细时间分层筛选　
+
+2,调整页面头部显示内容和页面标题
+    方法一：
+        # class MyAdminSite(admin.AdminSite):
+        #     site_header = '好医生运维资源管理系统'  # 此处设置页面显示标题
+        #     site_title = '好医生运维'
+        # admin_site = MyAdminSite(name='management')
+
+    方法二：
+        admin.site.site_header = '修改后'
+        admin.site.site_title = '哈哈'
+
+使用def get_queryset(self, request):   待测试
+        """函数作用：使当前登录的用户只能看到自己负责的服务器"""
+        qs = super(MachineInfoAdmin, self).get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(user=UserInfo.objects.filter(user_name=request.user))
+用户登录时判断是什么用户，如果是普通用户则只能看到自己的数据？
+
+
+
+###编辑页面的显示
+使用filter_horizontal来显示多对多字段更友好
+filter_horizontal=('tags',)
+
+例如，我想只显示标题、作者、分类标签、内容。不想显示是否推荐字段，可以如下两种设置方式：
+fields =  ('caption', 'author', 'tags', 'content')
+或者
+exclude = ('recommend',) #排除该字段
+设置之后，你会发现这些字段都是一个字段占一行。若想两个字段放在同一行可以如下设置：
+fields =  (('caption', 'author'), 'tags', 'content')
+
+###编辑字段集合
+用得比较多的是fieldsets。该设置可以对字段分块，看起来比较整洁。如下设置：
+fieldsets = (
+    ("base info", {'fields': ['caption', 'author', 'tags']}),
+    ("Content", {'fields':['content', 'recommend']})
+)
+
+get_readonly_fields 方法来实现对特定用户的只读显示。   待测试
+  def get_readonly_fields(self, request, obj=None):
+        """  重新定义此函数，限制普通用户所能修改的字段  """
+        if request.user.is_superuser:
+            self.readonly_fields = []
+        return self.readonly_fields
