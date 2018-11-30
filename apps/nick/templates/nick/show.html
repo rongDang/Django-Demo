@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>数据的展示</title>
@@ -49,6 +50,16 @@
         <h2 align="center">Django过滤器的使用:{{ array.0|add:array.2 }}</h2>
         <!--下面使用自定义的过滤器-->
         <h2 align="center">{{ array.3|square:8 }}</h2>
+    </div>
+
+    <!--分页器显示最简单的分页-->
+    <div class="container">
+        {% for person in people.object_list %}
+            <div>name:{{ person }}</div>
+        {% endfor %}
+        <div id="pagination">
+            {{ people.render }}
+        </div>
     </div>
 </body>
 </html>

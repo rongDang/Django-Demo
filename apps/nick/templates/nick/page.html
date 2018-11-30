@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试分页器</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+<div class="container">
+    {% for person in people.object_list %}
+        <div>name:{{ person.title }},日期:{{ person.create_time }}</div>
+    {% endfor %}
+    <div class="pagination">
+    {% if people.has_previous %}
+        <a href="?{{ people.previous_page_number.querystring }}" class="prev">&lsaquo;&lsaquo; 上一页</a>
+    {% else %}
+        <span class="disabled prev">&lsaquo;&lsaquo; 上一页</span>
+    {% endif %}
+    {% for page in people.pages %}
+        {% if page %}
+            {% ifequal page people.number %}
+                <span class="current page">{{ page }}</span>
+            {% else %}
+                <a href="?{{ page.querystring }}" class="page">{{ page }}</a>
+            {% endifequal %}
+        {% else %}
+            ...
+        {% endif %}
+    {% endfor %}
+    {% if people.has_next %}
+        <a href="?{{ people.next_page_number.querystring }}" class="next">下一页 &rsaquo;&rsaquo;</a>
+    {% else %}
+        <span class="disabled next">下一页 &rsaquo;&rsaquo;</span>
+    {% endif %}
+</div>
+</div>
+</body>
+</html>

@@ -40,8 +40,26 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',       # 静态文件管理框架
     'model.apps.ModelConfig',           # Django应用的注册
     'nick.apps.NickConfig',
+    'myaccount.apps.MyaccountConfig',
     'mdeditor',                         # 富文本编辑器
+    'pure_pagination',
+    # sites一个让你可以在同一个数据库与 Django 安装中管理多个网站的框架,comments,allauth对它有依赖
+    'django.contrib.sites',
+    'django_comments',  # 评论插件
+    'allauth',  # 管理用户注册登录的第三方包
+    'allauth.account',
+    'allauth.socialaccount',
+    # 第三方账号关联，测试使用GitHub
+    'allauth.socialaccount.providers.github',
 ]
+SITE_ID = 1     # 站点设置？
+
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 3,
+    'MARGIN_PAGES_DISPLAYED': 2,
+
+    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -143,3 +161,29 @@ STATICFILES_DIRS = (
 # 配置媒体文件，
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# 关于allauth的基本设定
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # 当用户登录时，既可以使用用户名也可以使用email
+ACCOUNT_EMAIL_REQUIRED = True       # 注册时必须填写email
+LOGIN_REDIRECT_URL = '/accounts/profile/'    # 设置登录后跳转链接
+
+# 告诉django-allauth使用我们自定义的注册表单
+ACCOUNT_SIGNUP_FORM_CLASS = 'myaccount.forms.SignupForm'
+
+# django-allauth相关设置
+AUTHENTICATION_BACKENDS = (
+    # django admin使用的用户登录于django-allauth无关
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+# django的邮箱设定，使用allauth的话，注册后它会给邮箱发送一条注册信息给注册邮箱验证
+EMAIL_HOST = 'smtp.qq.com'  # 这里使用QQ的smtp服务
+EMAIL_PORT = 25
+EMAIL_HOST_USER = '2801293031@qq.com'   # 你的 QQ 账号和授权码
+EMAIL_HOST_PASSWORD = 'vdltztnwuggbddei'
+EMAIL_USE_TLS = True  # 这里必须是 True，否则发送不成功
+EMAIL_FROM = '2801293031@qq.com'  # 发件人邮箱
+DEFAULT_FROM_EMAIL = '2801293031@qq.com'    # 默认发件人邮箱
+

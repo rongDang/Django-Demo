@@ -6,6 +6,8 @@ app_name = "nick"
 urlpatterns = [
     path('index/', views.index, name="main"),
     path('show/<msg>', views.show, name="show_data"),
+    path('page/', views.page),
+    path('comment/', views.comment, name='comment'),
     # 个人博客测试页面
     path('blog_index/', views.blog_index, name="blog_index"),
     path('blog_content/<title>', views.blog_content, name="blog_content"),

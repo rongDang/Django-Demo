@@ -2,9 +2,14 @@ from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from nick.models import *
 import markdown
+from pure_pagination import Paginator, PageNotAnInteger
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
+    # from django.core.mail import send_mail
+    # 因为在settings中已经配置了邮箱设置，第三个是发件者，后面的是收件者,发送时页面会一直加载
+    # send_mail("测试邮件", "First Django email QQ", "2801293031@qq.com", ["2801293031@qq.com"], fail_silently=False)
     # 从链接中获得参数，参数为model则跳转到model的首页中去,reverse反转网址，
     if request.GET.get("name") == "model":
         # reverse("model:main",arg={}),后面的arg={}是可以给网址的参数
@@ -17,11 +22,17 @@ def show(request, msg):
     student = {
         "s1": {"name": "小白", "age": 20, "sex": "man", "scroe": 90},
         "s2": {"name": "小黑", "age": 20, "sex": "man", "scroe": 99},
-        "s3": {"name": "小红", "age": 99, "sex": "woman", "scroe": 100},
-        "s4": {"name": "小碘", "age": 20, "sex": "man", "scroe": 89},
     }
     array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
     names = ["小明", "小白", "小黑", "小花", "小二"]
+
+    try:
+        page = request.GET.get('page', 1)
+    except PageNotAnInteger:
+        page = 1
+    p = Paginator(names, 2, request=request)
+    people = p.page(page)
+
     # 下面为多对多关系的查询，
     boy = Boy.objects.all()
     for i in boy:
@@ -34,8 +45,35 @@ def show(request, msg):
     return render(request, "nick/show.html", locals())
 
 
+# Django分页器效果的展示
+def page(request):
+    names = Blog.objects.all()
+    try:
+        page = request.GET.get('page', 1)
+    except PageNotAnInteger:
+        page = 1
+    p = Paginator(names, 2, request=request)
+    people = p.page(page)
+    return render(request, 'nick/page.html', locals())
+
+
+# 测试评论功能
+def comment(request):
+    # 因为评论需要绑定一个对象，所以随便给了一篇博客作为评论的对象
+    blog = Blog.objects.get(id=1)
+    return render(request, 'nick/comment.html', locals())
+
+
 def blog_index(request):
-    blog = Blog.objects.filter().values('id', 'title', 'create_time')
+    blog = Blog.objects.all().order_by("-create_time")
+    # 分页测试
+    try:
+        # 获取当前页面，默认为1
+        page = request.GET.get('page', 1)
+    except PageNotAnInteger:
+        page = 1
+    paginator = Paginator(blog, 2, request=request)
+    data = paginator.page(page)
     return render(request, 'nick/index.html', locals())
 
 

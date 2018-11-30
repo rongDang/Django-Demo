@@ -1,0 +1,58 @@
+关于Mdeditor富文本编辑器中图片大小的设置：
+    选择上传图片后，复制图片地址，然后写到<img>标签中然后设置大小，markdown实时预览不会显示出图片，但是在网页渲染时会显示出图片
+
+
+关于django-contrib-comments 的使用(皮毛)：
+    在settings中apps注册后，执行python manage.py migrate进行数据迁移，登录admin就可以看到后台多了一个DJANGO_COMMENTS应用
+    下面的Comments就是存储评论内容的表，里面有对应的评论内容和其他的信息。
+    现在暂时只做到了一级评论，后续要进行更改才能做到多级评论，具体的使用可以看comment.html文件中的解释。
+    我们可以理解它的功能就是和一个对象绑定，每个评论都需要和对象绑定，然后查看被绑定的对象也就可以看到下面对应的评论
+    我的测试案例中将它和一篇博客进行绑定，然后在显示该博客时，就可以在下面显示对应的评论内容
+
+
+Django-allauth第三方包：
+    给我们一个默认的登录页面，在当前网页没有账号的话，可以提供给我们注册，注册后我们在admin后台可以看到新注册的用户
+    注册通过邮箱注册后，会给注册邮箱一个验证信息，访问对应的验证链接才会通过验证，还可以通过第三方账号来登录，
+    通过第三方登录的话，需要在apps中注册，例如通过GitHub登录则需要添加:allauth.socialaccount.providers.github
+
+    //关于验证用户信息的另外一种方法，用户点击注册后，后台发送一条信息，内容和allauth发送的信息一样，中间添加一个链接要用户访问
+    这里链接对应一个视图函数，不同的用户验证链接是不同的，给链接后面加一个加密参数来分辨不同用户，然后在视图函数中来分别验证
+    通过最后的那个加密参数来分辨那个邮箱是同过验证的(如果自己来写这个邮箱验证功能的话，大概是这样操作?)
+
+    问题：通过第三方账号登录？例如GitHub，我在自己的GitHub账号上创建一个OAuth Apps的应用，然后别人通过GitHub登录
+    在GitHub上给我的这个app授权？然后再回到原来的页面进行账号绑定？
+
+    理解:以GitHub为例子，我在GitHub上创建了一个OAuth Apps，GitHub给我提供了 App ID 和 API secret,这两个东西就可以证明我的身份
+    就像使用QQ发送邮件的账号和授权码一样，你要使用GitHub的应用服务就需要它，这样用户在点击GitHub账号登录时需要给我的这个OAuth APPS
+    进行授权，然后我就知道了授权用户的邮箱和昵称了，用户就算是登录了。
+
+myaccount应用的功能:
+    allauth并没有提供展示和修改用户资料的功能，也没有对用户资料进行扩展，这里我们在myaccount应用中添加这些功能
+    一个是用户登录后跳转到个人信息页面(/accounts/profile/)，一个是允许登录用户编辑个人资料(/accounts/profile/update).
+
+    1.创建应用配置
+        在APPS中注册myaccount，同时将urls添加到项目根urls中去，链接路径和allauth的链接一样为accounts
+        用户在登录或注册后自动跳转到/accounts/profile/  --> LOGIN_REDIRECT_URL = '/accounts/profile/'
+
+    2.编写模型
+        由于Django自带的User模型字段邮箱，所以我们需要对其扩展，最便捷的方式就是创建UserProfile的模型
+        内容在 myaccount/models.py中所示
+
+    3.编写urls和视图
+        具体内容看 myaccount/urls.py 和 myaccount/views.py 文件
+
+    4.添加表单
+        用户更新资料需要用到表单，所以我们把表单单独放在forms.py文件中，里面有两个表单
+        一个是更新用户资料时使用，一个是重写用户登录表单，
+        重写用户登录表单是因为django-allauth在用户注册只会创建User对象，不会创建与之关联的UserProfile对象
+        我们需要用户在注册时两个对象一起被创建并存到数据库中，所以需要通过重写表单
+        要告诉Django的allauth使用我们自定义的登录表单，我们只需要在settings.py里加入一行。
+        ACCOUNT_SIGNUP_FORM_CLASS = 'myaccount.forms.SignupForm'
+
+    对了最后要运行和使用django-allauth和myaccount都要进行数据迁移，makegiations, migrate
+
+
+
+
+
+Django的form表单结合bootstrap渲染前端代码

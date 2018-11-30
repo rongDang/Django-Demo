@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试Django的评论/(一级评论，没有回复功能)</title>
+    {% load static comments %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-default" style="margin-top: 20px">
+        <div class="panel-heading">
+            <h4>评论列表</h4>
+        </div>
+        <div class="panel-body">
+        {#   blog就是你评论的对象，评论和该对象绑定(id绑定)，这里对象是博客，当展示博客时会显示该博客下对应的评论数据   #}
+            {% get_comment_list for blog as comments %}
+            {% for comment in comments %}
+                <div class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <span class="glyphicon glyphicon-calendar"></span> {{ comment.submit_date|date:"Y-m-d H:i"}}
+                            <span class="glyphicon glyphicon-user"></span> {{ comment.user_name }}</h4>
+                        <p class="comment_content">{{ comment.comment }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <span>暂无评论</span>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="panel panel-default" style="margin-top: 20px">
+        <div class="panel-heading"><h4>新的评论</h4></div>
+        {% get_comment_form for blog as blog_form %}
+        <div class="panel-body">
+            {# 提交到的是comments站点，comment_form_target是comments的 #}
+            <form id="comment_form" class="form-horizontal" action="{% comment_form_target %}" method="post">
+                {% csrf_token %}
+                {# 必须的字段 #}
+                {{ blog_form.object_pk }}
+                {{ blog_form.content_type }}
+                {{ blog_form.timestamp }}
+                {{ blog_form.site }}
+                {{ blog_form.submit_date }}
+                {{ blog_form.security_hash }}
+                {# 用户名字段，这个后面会修改为登录用户评论，无需填这个 #}
+                <div class="input-group col-lg-6">
+                    <span class="input-group-addon" id="basic-addon1">昵称： </span>
+                    <input type="text" id="id_name" class="form-control" name="name"/>
+                </div>
+
+                {# 邮箱地址字段 #}
+                <div class="input-group col-lg-6" style="padding-top: 20px">
+                    <span class="input-group-addon" id="basic-addon1">邮箱： </span>
+                    <input type="text" id="id_email" class="form-control" name="email" placeholder="请填真实邮箱以便作者回复"/>
+                </div>
+
+                {# 评论内容 #}
+                <div class="input-group" style="padding-top: 20px">
+                    <span class="input-group-addon" id="basic-addon1">评论： </span>
+                    <textarea class="form-control" id="id_comment" style="resize: none" rows="6" name="comment"></textarea>
+                </div>
+
+                {# 防垃圾评论 #}
+                <p style="display:none;">
+                    <label for="id_honeypot">如果你在该字段中输入任何内容，你的评论就会被视为垃圾评论。</label>
+                    <input type="text" name="honeypot" id="id_honeypot">
+                </p>
+                {# 表单按钮 #}
+                <div class="form-actions" style="padding-top: 10px">
+                    <input class="btn btn-success" id="submit_btn" type="submit" value="提交评论"/>
+                    <!--提交后的重定向地址，在value中写提交后要重定向的地址,改用Ajax提交后可以注释-->
+                    <!---<input type="hidden" name="next" value="{ % url 'nick:blog_content' 'Django博客模型' %}"/>-->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    //csrfmiddlewaretoken——django csrf中间件需要 content_type—— 内容类型 content_pk——ID值
+    //site—— 站点 user—— 用户对象 timestamp——当前时间 security_hash——安全检测用
+    //name——名称  email——邮箱 comment——内容 submit_date——提交日期 honeypot——防止机器乱填垃圾信息
+    //使用Ajax的方式提交评论，不然点击提交评论会进入到comments自带的表单页面，这个页面异常丑，emmmm~
+    $(function () {
+        $("form").submit(function () {
+            if($('#id_honeypot').val()){
+                alert("请停止输入垃圾评论");return false;
+            }
+            if(!$("#id_name").val()){
+                //focus()方法是让输入焦点回到绑定的input上去
+                alert("请输入昵称");$("#id_name").focus();return false;
+            }
+            var email = $("#id_email").val();
+            var ret = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+            if(!ret.test(email)){
+                alert("请输入正确邮箱");$("#id_email").focus();return false;
+            }
+            if(!$("#id_comment").val()){
+                alert("请输入内容");$("#id_comment").focus();return false;
+            }
+            $.ajax({
+                type: "POST",
+                data: $('#comment_form').serialize(),
+                url: "{% comment_form_target %}",
+                dataType: "html",
+                success: function(html, textStatus) {
+                    //提交成功后重新加载当前页面,可以再写一个Ajax，后台邮件提示我有新的评论
+                    window.location.reload();
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("评论出错，" + errorThrown);
+                }
+            });
+            return false;
+        })
+    })
+</script>
+</html>
