@@ -231,8 +231,14 @@ media       # 媒体资源文件
     所以多对多关系只是帮我们多做了一步嵌套子查询，通过第三个表来关联前两个表
 
 
+django关于manage.py migrate 无效果问题
+    已有的model，修改之后，想重新建模，于是将migrations文件夹中除__init__.py之外其他文件都删掉，再次执行以下步骤python manage.py makemigrations确认成功，
+    执行python manage.py migrate，提示No migrations to apply.
 
-
+    解决方法:
+        python manage.py dbshell 进到数据库中，执行delete from django_migrations where app='your_appname';
+    python manage.py makemigrations(若migrations文件未删除，可不执行这一步)
+    python manage.py migrate 好啦，大功告成
 
 
 

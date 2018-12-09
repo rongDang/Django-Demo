@@ -35,77 +35,37 @@
 {% endblock %}
 
 {% block page %}
-    <div class="panel panel-default" style="margin-top: 20px">
-        <div class="panel-heading">
-            <h3>评论列表</h3>
-        </div>
-        <div class="panel-body">
-        {#   blog就是你评论的对象，评论和该对象绑定(id绑定)，这里对象是博客，当展示博客时会显示该博客下对应的评论数据   #}
-            {% get_comment_list for data as comments %}
-            {% for comment in comments %}
-                <div class="media">
+<div class="container">
+    <div class="row col-md-12">
+        <!--comments对应的文章下的评论，comment对应评论文章的用户对象-->
+        {% for comment in comments %}
+            <div class="media" style="border-bottom: dashed 1px #7f8c8d; padding-top: 10px">
+                <div class="media-body">
+                    <h4 class="media-heading">{{ comment.author.username }}</h4>
+                    <p>关联的博客id:{{ comment.entry_id }}, 当前评论id:{{ comment.id }}</p>
+                    <div>{{ comment.content }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    <hr/>
+    </div>
+    <div class="row col-md-12">
+        <h2>回复评论:</h2>
+        {% for comment in replys %}
+            {% for foo in comment %}
+                <div class="media" style="border-bottom: dashed 1px #7f8c8d; padding-top: 10px">
                     <div class="media-body">
                         <h4 class="media-heading">
-                            <span class="glyphicon glyphicon-calendar"></span> {{ comment.submit_date|date:"Y-m-d H:i"}}
-                            <span class="glyphicon glyphicon-user"></span> {{ comment.user_name }}
+                            {{ foo.author_form.username }} 回复了: {{ foo.author_to.username }}
                         </h4>
-                        <p class="comment_content">{{ comment.comment }}</p>
+                        <p>关联的评论id：{{ foo.comment_id }}，在文章: {{ foo.comment.entry.title }}</p>
+                        <div>{{ foo.content }}</div>
                     </div>
                 </div>
-            {% empty %}
-                <span>暂无评论</span>
             {% endfor %}
-        </div>
+        {% endfor %}
     </div>
-
-{#    <div class="panel panel-default" style="margin-top: 20px">#}
-{#        <div class="panel-heading"><h4>新的评论</h4></div>#}
-{#        {% get_comment_form for data as blog_form %}#}
-{#        <div class="panel-body">#}
-{#            <form id="comment_form" class="form-horizontal" action="{% comment_form_target %}" method="post">#}
-{#                {% csrf_token %}#}
-                {# 必须的字段 #}
-{#                {{ blog_form.object_pk }}#}
-{#                {{ blog_form.content_type }}#}
-{#                {{ blog_form.timestamp }}#}
-{#                {{ blog_form.site }}#}
-{#                {{ blog_form.submit_date }}#}
-{#                {{ blog_form.security_hash }}#}
-                {# 用户名字段，这个后面会修改为登录用户评论，无需填这个 #}
-{#                <div class="input-group input-group-lg">#}
-{#                    <span class="input-group-addon" id="sizing-addon1">名称： </span>#}
-{#                    <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">#}
-{#                </div>#}
-{##}
-                {# 邮箱地址字段 #}
-{#                <div class="input-group input-group-lg">#}
-{#                    <span class="input-group-addon" id="sizing-addon1">邮箱： </span>#}
-{#                    <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon1">#}
-{#                </div>#}
-{##}
-                {# 评论内容 #}
-{#                <a name="newcomment" id="newcomment"></a>#}
-{#                <div class="control-group">#}
-{#                    <label class="control-label" for="id_comment">评论： </label>#}
-{#                    <div class="controls">#}
-{#                        <textarea class="form-control" rows="3"></textarea>#}
-{#                    </div>#}
-{#                </div>#}
-{##}
-                {# 防垃圾评论 #}
-{#                <p style="display:none;">#}
-{#                    <label for="id_honeypot">如果你在该字段中输入任何内容，你的评论就会被视为垃圾评论。</label>#}
-{#                    <input type="text" name="honeypot" id="id_honeypot">#}
-{#                </p>#}
-{##}
-                {# 表单按钮 #}
-{#                <div class="input-group input-group-lg">#}
-{#                    <input class="btn btn-info" id="submit_btn" type="submit" name="submit" value="提交"/>#}
-{#                    <input type="hidden" name="next" value="#"/>#}
-{#                </div>#}
-{#            </form>#}
-{#        </div>#}
-{#    </div>#}
+</div>
 {% endblock %}
 
 <!--JavaScript-->

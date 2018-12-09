@@ -56,3 +56,50 @@ myaccount应用的功能:
 
 
 Django的form表单结合bootstrap渲染前端代码
+https://simpleisbetterthancomplex.com/article/2017/08/19/how-to-render-django-form-manually.html
+form在模板中的渲染方式:
+    form.as_p:渲染表单为一系列的p标签，每个p标签包含一个字段
+    form.as_ul:渲染表单为一系列的li标签，每个li 标签包含一个字段，它不包含ul标签
+    form.as_table:输出表单为一个HTML的table
+
+    重点:通过循环渲染form字段
+    {% for field in form %}，通过迭代form，获取其中的所有field。field可引用的包括: {{filed.label_tag}},
+    {{ field }}, {{field.errors}}
+
+    field.label_tag
+        {{ field.label_tag }}输出为field的label元素：
+        <label for="id_message">Message:</label>
+
+    field
+        {{ field }}输出为field的input
+        <input type="text" name="message" id="id_message" />
+
+    field.errors
+        {{ field.errors }}field的errors元素（errors一般在form验证出错的时候显示）
+        ['This field is required.']
+
+    或者我们逐个渲染form表单，例如我的form表单中有 name,email,message三个字段，可以这样渲染出来：
+    {{form.name.label_tag}}:字段名,{{form.name.errors}}:错误提示,{{form.name}}:字段输入框
+    {{form.email.label_tag}}:字段名,{{form.email.errors}}:错误提示,{{form.email}}:字段输入框
+    {{form.message.label_tag}}:字段名,{{form.message.errors}}:错误提示,{{form.message}}:字段输入框
+
+
+    字段数据:不管表单提交的是什么数据，一旦通过is_valid的验证(is_valid返回True)，验证后的表单数据将位于form.cleaned_data字典中.
+    我们可以form的验证方法，例如form中有字段:name,phone...那么我们可以在对应的form中写我们自定义的方法
+    clean_name(self), clean_phone()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

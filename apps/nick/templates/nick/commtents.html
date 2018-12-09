@@ -1,0 +1,72 @@
+{% extends 'nick/base.html' %}
+{% block header_title %}测试评论，回复{% endblock %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row col-md-12" style="border-bottom: dashed 1px #7f8c8d">
+            <div class="panel panel-info" id="editor">
+                <div class="panel-heading" style="font-size: 18px">
+                    {% if user.is_authenticated %}
+                        <span class="glyphicon glyphicon-user"></span> {{ user.username }}
+                        <strong>回复：<span style="color: #ff8b2f">121</span></strong>
+                    {% else %}
+                        尚未登录，请 <a href="#" style="color: #ff954b">登录</a> 后参与评论
+                    {% endif %}
+                </div>
+                <div class="panel-body" style="padding: 0px;height: 300px">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form.media }}
+                        {{ form.content }}
+                    </form>
+                </div>
+                <div class="panel-footer pull-right" style="background-color: transparent">
+                    <button class="btn btn-danger" style="display: none"><span class="glyphicon glyphicon-remove"></span> 取消回复</button>
+                    <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> 提交评论</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col-md-12">
+            <!--comments对应的文章下的评论，comment对应评论文章的用户对象-->
+            {% for comment in comments %}
+                <div class="media" style="border-bottom: dashed 1px #7f8c8d; padding-top: 10px">
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ comment.author.username }}</h4>
+                        <p>关联的博客id:{{ comment.entry_id }}, 当前评论id:{{ comment.id }}</p>
+                        <div>{{ comment.content }}</div>
+                        <a href="#editor" class="pull-right" onclick="reply('{{ comment.author }}')">回复</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="row col-md-12">
+            <h2>回复评论:</h2>
+            {% for comment in replys %}
+                {% for foo in comment %}
+                    <div class="media" style="border-bottom: dashed 1px #7f8c8d; padding-top: 10px">
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                {{ foo.author_form.username }} 回复了: {{ foo.author_to.username }}
+                            </h4>
+                            <p>关联的评论id：{{ foo.comment_id }}，在文章: {{ foo.comment.entry.title }}</p>
+                            <div>{{ foo.content }} <br/> 被回复内容--->{{ foo.comment.content }}</div>
+                            <a href="#editor" class="pull-right" onclick="reply('{{ foo.author_form }}')">回复</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+    function reply(user) {
+
+    }
+    </script>
+{% endblock %}
+

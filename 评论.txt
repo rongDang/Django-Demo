@@ -1,0 +1,53 @@
+关于Django多级评论的一些思路:(参考:https://zhuanlan.zhihu.com/p/35354495)
+
+为了实现类似博客中的楼中楼评论，下面设计为二级评论的结构，一级评论仅与文章关联，而第二级评论与第一级评论以及自身关联。
+即一级评论回复文章，二级评论则回复一级评论并允许相互回复。
+
+考虑到可能有多个应用需要用到评论功能，所有将评论单独写为一个app
+
+1、评论模型
+先设计具体的模型，这两级评论都有相同之处，可以利用类的继承。写一个BaseComment，内容、评论时间和评论者都是共同的，
+可以放在BaseComment中，然后在Meta类中申明这是一个抽象模型，不需进行数据库迁移。
+
+然后是一级评论ArticleComment，在继承BaseComment的基础上，只需添加一个外键article关联文章即可。
+二级评论ArticleCommentReply，可以称作评论回复，添加两个外键，comment关联一级评论，必填；reply关联自身，允许值为空。
+在Meta类中指定排序方式，我选择让ArticleComment按时间倒序，ArticleCommentReply按时间正序。这样排序主要是考虑到，
+倒序可以让新的一级评论更有机会被看见，从而引发更多讨论，不至于让讨论只集中在评论时间较早的评论上。
+而二级评论由于相互间关联性较大，用正序可以看出讨论的完整过程。
+
+'评论应用模型'
+from django.db import models
+from django.contrib.auth.models import User
+# 从别的app中导入文章模型
+from blog.models import Article
+
+class BaseComment(models.Model):
+    '基础评论模型'
+    content = models.TextField('评论', max_length=500)
+    time = models.DateTimeField('评论时间', auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='评论者')
+    class Meta:
+        abstract = True
+
+class ArticleComment(BaseComment):
+    '文章评论'
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments', verbose_name='评论文章')
+    class Meta:
+        ordering = ['-time']
+
+class ArticleCommentReply(BaseComment):
+    '文章评论回复(二级评论)'
+    comment = models.ForeignKey(ArticleComment, on_delete=models.CASCADE, related_name='replies', verbose_name='一级评论')
+    reply = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, verbose_name='回复对象')
+    class Meta:
+        ordering = ['time']
+这里实际上只有两个评论模型，却写了三个类，表面上看是更麻烦了，但如果不只是文章需要评论呢？
+当视频、图片或微博之类的app也需要评论时，只需要在继承BaseComment类的基础上添加其他外键即可。如果还想修改模型，比如再添加一个评论标题，
+也只需要在BaseComment类中添加一个字段，其他子类都能获得该字段，这时就能体现类继承的优势了。
+
+
+多级评论的好处是，在渲染评论列表的时候可以将被评论的内容更好的查询出来
+
+
+
+

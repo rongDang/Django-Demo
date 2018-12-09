@@ -1,0 +1,106 @@
+{% extends 'nick/base.html' %}
+{% block header_title %}测试评论，回复{% endblock %}
+{% load static %}
+{% load markdown_deux_tags %}
+
+
+{% block content %}
+    <div class="container">
+        <!--评论表单-->
+        <div class="row col-md-12" style="border-bottom: dashed 1px #7f8c8d">
+            <div class="panel panel-info" id="editor">
+                <div class="panel-heading" style="font-size: 18px">
+                    {% if user.is_authenticated %}
+                        <span class="glyphicon glyphicon-user"></span> {{ user.username }}
+                        <strong id="reply" style="display: none">回复：<span id="reply_name" style="color: #ff8b2f"></span></strong>
+                    {% else %}
+                        尚未登录，请 <a href="#" style="color: #ff954b">登录</a> 后参与评论
+                    {% endif %}
+                </div>
+                <div class="panel-body" style="padding: 0px;height: 300px">
+                    <form METHOD="post" id="form_comment">
+                        {% csrf_token %}
+                        {{ form.media }}
+                        {{ form.content }}
+                        <input type="text" name="blog" value="{{ blog.id }}" style="display: none">
+                        <input type="text" id="name" name="reply" value="" style="display: none">
+                    </form>
+                </div>
+                <div class="panel-footer pull-right" style="background-color: transparent">
+                    <button class="btn btn-danger" style="display: none"><span class="glyphicon glyphicon-remove"></span> 取消回复</button>
+                    <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> 提交评论</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col-md-12">
+            <!--comments对应的文章下的评论，comment对应评论文章的用户对象-->
+            {% for comment in comments %}
+                <div class="media" style="border-bottom: dashed 1px #7f8c8d; padding-top: 10px">
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <span class="glyphicon glyphicon-user"></span> {{ comment.name.username }}
+                        </h4>
+                        <div>
+                            {% if comment.parent_discuss %}
+                                <div style="margin-left: 50px">
+                                    被回复内容:{{ comment.parent_discuss.content | markdown }}
+                                </div>
+                            {% endif %}
+                            {{ comment.content | markdown }}
+                        </div>
+                        <a href="#editor" class="pull-right" onclick="reply('{{ user.username }}','{{ comment.name }}','{{ comment.id }}')">回复</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    //<script>
+    //name为登录的用户，user是被评论对象,name_id为被评论的id
+    function reply(name,user,name_id) {
+        if (name==""){
+            alert('需要登录才能回复哦！')
+        }else {
+            $('#name').attr("value",name_id);//这里设置form中的被回复者的用户名
+            $('.btn-danger').show();
+            $('#reply').show();
+            $('#reply_name').text(user)
+        }
+    }
+    $('.btn-danger').click(function () {
+        $('#name').attr("value","");
+        $('.btn-danger').hide();
+        $('#reply').hide();
+    });
+    //提交评论
+    $('.btn-success').click(function () {
+        var content = $("textarea[name='content']").val();
+        if('{{ user.username }}'==""){
+            alert("请登录后再评论！")
+        }else if(content==""){
+            alert("评论不能为空")
+        }else {
+            //通过serialize()将表单数据传到后台，中间有包括被回复者，
+            // 如果被回复者存在于数据库中则添加评论的父级评论为被回复者的那条数据，id对应
+            $.ajax({
+                type: "POST",
+                data: $('#form_comment').serialize(),
+                url: "{% url 'nick:submit' %}",
+                dataType: "json",
+                success: function(msg) {
+                    alert(msg);
+                    //提交成功后重新加载当前页面,可以再写一个Ajax，后台邮件提示我有新的评论
+                    window.location.reload();
+                },
+                error: function () {
+                    alert("评论出错");
+                }
+            });
+        }
+    })
+    //</script>
+{% endblock %}
+

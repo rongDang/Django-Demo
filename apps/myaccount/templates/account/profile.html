@@ -8,12 +8,8 @@
         <a href="{% url 'account_logout' %}">Logout</a>
     {% endif %}
     <p>
-        Welcome, {{ user.username }}.
-        {% if not user.profile.account_verified %}
-            (邮箱未验证)
-        {% endif %}
+        Welcome, {{ user.username }}.-----邮箱验证:{{ user.is_active }}
     </p>
-
 
     <h2>My Profile</h2>
 

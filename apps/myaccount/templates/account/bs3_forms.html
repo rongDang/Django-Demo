@@ -1,0 +1,41 @@
+{% load widget_tweaks %}
+
+<!--渲染隐藏的form表单内容-->
+{% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+{% endfor %}
+    <!--此方法返回Form.errors 与特定字段无关的错误列表。这包括ValidationError引发的s Form.clean()和使用的错误。-->
+{% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+        {% for error in form.non_field_errors %}
+            {{ error }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% for field in form.visible_fields %}
+    <div class="form-group">
+        <!--字段名label-->
+        {{ field.label_tag }}
+
+        {% if form.is_bound %}
+            <!--判断是否有错误信息-->
+            {% if field.errors %}
+                <!--通过render_field 给字段设置属性-->
+                {% render_field field class="form-control is-invalid" %}
+                {% for error in field.errors %}
+                    <div class="invalid-feedback">{{ error }}</div>
+                {% endfor %}
+            {% else %}
+                <!--没有错误信息则正常显示form字段-->
+                {% render_field field class="form-control is-valid" %}
+            {% endif %}
+        {% else %}
+            {% render_field field class="form-control" %}
+        {% endif %}
+
+        {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+    </div>
+{% endfor %}

@@ -1,15 +1,16 @@
 from django.shortcuts import render, redirect, reverse
+from pure_pagination import Paginator, PageNotAnInteger
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from nick.models import *
 import markdown
-from pure_pagination import Paginator, PageNotAnInteger
-from django.contrib.auth.decorators import login_required
+from .forms import MDEditorForm
 
 
 def index(request):
     # from django.core.mail import send_mail
     # 因为在settings中已经配置了邮箱设置，第三个是发件者，后面的是收件者,发送时页面会一直加载
-    # send_mail("测试邮件", "First Django email QQ", "2801293031@qq.com", ["2801293031@qq.com"], fail_silently=False)
+    # send_mail("小苗同学", "这是一个测试邮件", "2801293031@qq.com", ["1954404140@qq.com"], fail_silently=False)
     # 从链接中获得参数，参数为model则跳转到model的首页中去,reverse反转网址，
     if request.GET.get("name") == "model":
         # reverse("model:main",arg={}),后面的arg={}是可以给网址的参数
@@ -57,14 +58,51 @@ def page(request):
     return render(request, 'nick/page.html', locals())
 
 
-# 测试评论功能
+# 测试评论功能，使用djano-comments，只有评论，没有回复功能
 def comment(request):
     # 因为评论需要绑定一个对象，所以随便给了一篇博客作为评论的对象
     blog = Blog.objects.get(id=1)
     return render(request, 'nick/comment.html', locals())
 
 
+# 测试评论功能，带有回复的功能,二级评论，没有完成，有问题
+def comments(request):
+    blog = Blog.objects.get(id=1)  # Django博客模型
+    # 查询该博客下有多少评论
+    comments = Comments.objects.filter(entry=blog.id)
+    replys = []
+    for i in comments:
+        replys.append(CommentReply.objects.filter(comment=i.id))
+        print(CommentReply.objects.filter(comment=i.id))
+        # replay = CommentReply.objects.get(comment=i.id)
+    # 二级评论需要有和谁关联的一级评论，通过这个一级评论来找到它下面的二级评论，二级评论有个问题
+    # reply = CommentReply.objects.filter(comment=comments[0].id)
+    form = MDEditorForm()
+    return render(request, 'nick/commtents.html', locals())
+
+
+# 多级评论, 评论的渲染有点问题
+def test_comments(request):
+    blog = Blog.objects.get(id=1)
+    comments = Discuss.objects.filter(blog=blog.id)
+    form = MDEditorForm()
+    return render(request, 'nick/test_comments.html', locals())
+
+
+# 评论表单数据的提交
+def test_submit(request):
+    # reply是被回复的评论，
+    user_id = request.user.id
+    reply = request.POST.get("reply")
+    blog = request.POST.get("blog")
+    content = request.POST.get("content")
+    print(reply, blog, content)
+    Discuss.objects.create(content=content, blog_id=blog, name_id=user_id, parent_discuss_id=reply)
+    return HttpResponse("1")
+
+
 def blog_index(request):
+    print(request.user.id)
     blog = Blog.objects.all().order_by("-create_time")
     # 分页测试
     try:
@@ -105,8 +143,10 @@ def blog_class_details(request, title):
 
 def tags(request, title):
     tags = Tag.objects.all()
+    # 更新标签数目
     obj_tag_list = Tag.objects.all()
     for obj_tag in obj_tag_list:
+        # 正向
         tag_number = obj_tag.blog_set.count()
         obj_tag.number = tag_number
         obj_tag.save()

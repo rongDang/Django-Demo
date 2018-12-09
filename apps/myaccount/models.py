@@ -22,7 +22,7 @@ class UserProfile(models.Model):
         return "{}'s profile".format(self.user.__str__())
 
     def account_verified(self):
-        # is_authenticated是判断当前用户是否已通过身份验证(是否登录)
+        # is_authenticated是判断当前用户是否已通过身份验证(是否登录),auth.is_active也是邮箱是否验证
         if self.user.is_authenticated:
             # 查询登录用户的邮箱，verified默认为False，认证后为True
             result = EmailAddress.objects.filter(email=self.user.email)

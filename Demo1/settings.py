@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'model.apps.ModelConfig',           # Django应用的注册
     'nick.apps.NickConfig',
     'myaccount.apps.MyaccountConfig',
-    'mdeditor',                         # 富文本编辑器
-    'pure_pagination',
+    'markdown_deux',        # 前端渲染markdown
+    'mdeditor',                          # 富文本编辑器
+    'pure_pagination',                  # 分页
+    'widget_tweaks',                    # 自定义渲染forms表单工具
     # sites一个让你可以在同一个数据库与 Django 安装中管理多个网站的框架,comments,allauth对它有依赖
     'django.contrib.sites',
     'django_comments',  # 评论插件
@@ -51,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # 第三方账号关联，测试使用GitHub
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.baidu',
 ]
 SITE_ID = 1     # 站点设置？
 
@@ -187,3 +190,49 @@ EMAIL_USE_TLS = True  # 这里必须是 True，否则发送不成功
 EMAIL_FROM = '2801293031@qq.com'  # 发件人邮箱
 DEFAULT_FROM_EMAIL = '2801293031@qq.com'    # 默认发件人邮箱
 
+# mdeditor markdown编辑器配置
+MDEDITOR_CONFIGS = {
+    'default': {
+        'width': '90%',  # 自定义编辑框宽度
+        'heigth': 500,  # 自定义编辑框高度
+        'toolbar': ["undo", "redo", "|",
+                    "bold", "del", "italic", "quote", "ucwords", "uppercase", "lowercase", "|",
+                    "h1", "h2", "h3", "h5", "h6", "|",
+                    "list-ul", "list-ol", "hr", "|",
+                    "link", "reference-link", "image", "code", "preformatted-text", "code-block", "table", "datetime",
+                    "emoji", "html-entities", "pagebreak", "goto-line", "|",
+                    "help", "info",
+                    "||", "preview", "watch", "fullscreen"],  # 自定义编辑框工具栏
+        'upload_image_formats': ["jpg", "jpeg", "gif", "png", "bmp", "webp"],  # 图片上传格式类型
+        'image_floder': 'editor',  # 图片保存文件夹名称
+        'theme': 'default',  # 编辑框主题 ，dark / default
+        'preview_theme': 'default',  # 预览区域主题， dark / default
+        'editor_theme': 'default',  # edit区域主题，pastel-on-dark / default
+        'toolbar_autofixed': True,  # 工具栏是否吸顶
+        'search_replace': True,  # 是否开启查找替换
+        'emoji': True,  # 是否开启表情功能
+        'tex': True,  # 是否开启 tex 图表功能
+        'flow_chart': True,  # 是否开启流程图功能
+        'sequence': True  # 是否开启序列图功能
+    },
+
+    'form_config': {
+        'width': '100%',  # 自定义编辑框宽度
+        'heigth': 300,  # 自定义编辑框高度
+        'toolbar': ["undo", "redo", "|", "link", "image", "code", "code-block",
+                    "table",
+                    "emoji", "|",
+                    "help", "info", "preview", "watch", "fullscreen"],  # 自定义编辑框工具栏
+        'upload_image_formats': ["jpg", "jpeg", "gif", "png", "bmp", "webp"],  # 图片上传格式类型
+        'image_floder': 'editor',  # 图片保存文件夹名称
+        'theme': 'default',  # 编辑框主题 ，dark / default
+        'preview_theme': 'default',  # 预览区域主题， dark / default
+        'editor_theme': 'default',  # edit区域主题，pastel-on-dark / default
+        'toolbar_autofixed': True,  # 工具栏是否吸顶
+        'search_replace': True,  # 是否开启查找替换
+        'emoji': True,  # 是否开启表情功能
+        'tex': True,  # 是否开启 tex 图表功能
+        'flow_chart': True,  # 是否开启流程图功能
+        'sequence': True,  # 是否开启序列图功能
+    },
+}

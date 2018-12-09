@@ -17,8 +17,8 @@ def index(request):
     return render(request, 'model/index.html', locals())
 
 
-def year(request, year):
-    return HttpResponse("测试使用2.1版本:"+str(year))
+def year(request, years):
+    return HttpResponse("测试使用2.1版本:"+str(years))
 
 
 # 作业1
