@@ -5,14 +5,18 @@ from model.models import *
 from model.forms import MDEditorForm
 from django.db.models import Count, F, Avg, Sum
 import json, markdown
+# 测试异步任务
+from .tasks import test_celery
 
 
 def index(request):
-    # 从链接中获得参数，参数为model则跳转到model的首页中去
-    if request.GET.get("name") == "nick":
-        return redirect(reverse("nick:main"))
-    elif request.GET.get("id"):
-        return
+    result = test_celery.delay()
+    print(result)
+    # # 从链接中获得参数，参数为model则跳转到model的首页中去
+    # if request.GET.get("name") == "nick":
+    #     return redirect(reverse("nick:main"))
+    # elif request.GET.get("id"):
+    #     return
     bolg = Shop.objects.all().values('id', 'name')
     return render(request, 'model/index.html', locals())
 
@@ -134,6 +138,7 @@ def show_editor(request):
     # 表单显示，未排版
     form = MDEditorForm()
     return render(request, 'model/editor.html', locals())
+
 
 
 

@@ -34,7 +34,6 @@ urlpatterns = [
     path('model/', include('model.urls')),
     # 直接写对应app的名字导入路径文件，nick.urls(建议使用)
     path('nick/', include('nick.urls')),
-
 ]
 
 if settings.DEBUG:

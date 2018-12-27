@@ -89,12 +89,48 @@ form在模板中的渲染方式:
     clean_name(self), clean_phone()
 
 
+关于markdown的渲染方式：
+    1.使用django-markdown-deux模块
+        安装: pip install django-markdown-duex
+        配置: 在settings中将 markdown-deux 添加到APPS中去
+        使用:在html模板中加载 {% load markdown-deux-tags %}  {{ content| markdown }}
+
+    2.使用python markdown模块渲染
+        安装:pip install markdown
+        使用: view.py里面使用markdown渲染，下面案例中，data.content是要渲染的数据， content是渲染后的结果
+        content = markdown.markdown(data.content, extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+            'markdown.extensions.toc',
+        ])
+        markdown模块会直接把markdown格式的文档渲染成html格式。不过django的模板里会对html做转义，所以还需要修改一下模板。
+        所有使用content时需要添加safe过滤器 ---> {{ content | safe }}
 
 
+    https://github.com/highlightjs/highlight.js/tree/master/src/styles   代码高亮css
+    https://highlightjs.org/static/demo/        js渲染markdown
+    https://highlightjs.org/download/           下载地址
 
 
+Django 自定义装饰器进行登录访问限制
+    首先简单介绍一下装饰器，装饰器相当于在一个函数外面又套了一层函数，将原函数集成到一段新的代码中，执行的时候直接运行外面这层函数，
+    这样做的优点是可以动态扩展函数的功能。装饰器在 python 中的用法十分简单，外层函数放在原函数前，加@表示：
+    @work
+    def test(a,b):
+        ....
 
-
+    自定义装饰器，装饰器其实也就是一个函数，只不过它把一个函数作为参数传进来，返回了另外一个替换函数。
+    def my_login_required(func):
+    '''自定义 登录验证 装饰器'''
+    def check_login_status(request):
+        '''检查登录状态'''
+        if request.session.has_key('user_id'):
+            # 当前有用户登录，正常跳转
+            return func(request)
+        else:
+            # 当前没有用户登录，跳转到登录页面
+            return HttpResponseRedirect('/login')
+    return check_login_status
 
 
 

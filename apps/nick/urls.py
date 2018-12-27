@@ -11,6 +11,7 @@ urlpatterns = [
     path('comments/', views.comments, name='comments'),
     path('test_comments', views.test_comments, name='test_comments'),
     path('test_submit', views.test_submit, name='submit'),
+    path('upload/', views.upload, name='up_img'),
     # 个人博客测试页面
     path('blog_index/', views.blog_index, name="blog_index"),
     path('blog_content/<title>', views.blog_content, name="blog_content"),

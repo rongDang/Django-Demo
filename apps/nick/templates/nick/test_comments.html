@@ -2,7 +2,19 @@
 {% block header_title %}测试评论，回复{% endblock %}
 {% load static %}
 {% load markdown_deux_tags %}
-
+{% block head %}
+    <style>
+        .media a{color: brown}
+        .media a:hover{color: red}
+        .parent{
+            background-color: #f5f5f5;
+            margin: 5px;padding: 10px 10px 10px 10px;
+            border: 1px solid #eaeaea; font-size: 14px !important;
+            color: #666;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'nick/css/code.css' %}">
+{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -41,14 +53,24 @@
                         <h4 class="media-heading">
                             <span class="glyphicon glyphicon-user"></span> {{ comment.name.username }}
                         </h4>
-                        <div>
-                            {% if comment.parent_discuss %}
-                                <div style="margin-left: 50px">
-                                    被回复内容:{{ comment.parent_discuss.content | markdown }}
-                                </div>
-                            {% endif %}
-                            {{ comment.content | markdown }}
-                        </div>
+                        {% for foo in one %}
+                            <div style="max-height: 300px;overflow: auto">
+                                {% if foo.id == comment.id %}
+                                    <!--判断父级评论-->
+                                    {% if comment.parent_discuss %}
+                                        {% for i in one %}
+                                            {% if i.id == comment.parent_discuss.id %}
+                                                <div class="parent">
+                                                    <span class="glyphicon glyphicon-user">{{ comment.parent_discuss.name.username }}</span>
+                                                    <div style="max-height: 150px;overflow: auto">{{ i.content | safe }}</div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                    {{ foo.content | safe }}
+                                {% endif %}
+                            </div>
+                        {% endfor %}
                         <a href="#editor" class="pull-right" onclick="reply('{{ user.username }}','{{ comment.name }}','{{ comment.id }}')">回复</a>
                     </div>
                 </div>

@@ -150,7 +150,6 @@ USE_L10N = True
 
 USE_TZ = False
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
@@ -193,7 +192,7 @@ DEFAULT_FROM_EMAIL = '2801293031@qq.com'    # 默认发件人邮箱
 # mdeditor markdown编辑器配置
 MDEDITOR_CONFIGS = {
     'default': {
-        'width': '90%',  # 自定义编辑框宽度
+        'width': '100%',  # 自定义编辑框宽度
         'heigth': 500,  # 自定义编辑框高度
         'toolbar': ["undo", "redo", "|",
                     "bold", "del", "italic", "quote", "ucwords", "uppercase", "lowercase", "|",
@@ -235,4 +234,22 @@ MDEDITOR_CONFIGS = {
         'flow_chart': True,  # 是否开启流程图功能
         'sequence': True,  # 是否开启序列图功能
     },
+}
+
+# 使用rabbitMQ做MQ配置
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672'
+
+# from celery.schedules import crontab  定时任务调用crontab
+CELERYD_MAX_TASKS_PER_CHILD = 5
+CELERY_BEAT_SCHEDULE = {
+    # 周期性任务
+    'task-one': {
+        'task': 'model.tasks.test_celery',
+        'schedule': 5.0,  # 每5秒执行一次
+    },
+    # 定时任务
+    # 'task-two': {
+    #     'task': 'app.tasks.print_hello',
+    #     'schedule': crontab(minute=0, hour='*/3,10-19'),
+    # }
 }

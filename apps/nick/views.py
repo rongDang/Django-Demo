@@ -3,7 +3,7 @@ from pure_pagination import Paginator, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from nick.models import *
-import markdown
+import markdown, os
 from .forms import MDEditorForm
 
 
@@ -86,6 +86,16 @@ def test_comments(request):
     blog = Blog.objects.get(id=1)
     comments = Discuss.objects.filter(blog=blog.id)
     form = MDEditorForm()
+    one = []
+    for comm in comments:
+        b={}
+        b["id"] = comm.id
+        b["content"] = markdown.markdown(comm.content, extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+            'markdown.extensions.toc',
+        ])
+        one.append(b)
     return render(request, 'nick/test_comments.html', locals())
 
 
@@ -101,8 +111,35 @@ def test_submit(request):
     return HttpResponse("1")
 
 
+def allowed_file(filename):
+    IMG = ["png", "jpg", "gif", "jpeg"]  # 允许的拓展名
+    # 判断文件格式,使用rsplit()从右向左寻找,参数1是只分割一次，lower()将字符串大写转换为小写
+    # print(filename.rsplit(".", 1))
+    return "." in filename and filename.rsplit(".", 1)[1].lower() in IMG
+
+
+# post上传头像
+def upload(request):
+    if request.method == 'POST':
+        from Demo1.settings import MEDIA_ROOT
+        boy = Boy.objects.get(username='小白')
+        img = request.FILES.get('img')
+        if allowed_file(str(img)):
+            try:
+                os.remove(MEDIA_ROOT+"/"+str(boy.head))
+            except:
+                pass
+            boy.head = img
+            boy.save()
+            src = Boy.objects.get(username='小白').head
+            return HttpResponse(str(src))
+        else:
+            return HttpResponse('error')
+    return render(request, 'nick/test.html')
+
+
 def blog_index(request):
-    print(request.user.id)
+    # print(request.user.id)
     blog = Blog.objects.all().order_by("-create_time")
     # 分页测试
     try:

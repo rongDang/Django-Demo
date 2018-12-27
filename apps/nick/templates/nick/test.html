@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static%}
+    <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+</head>
+<body>
+<img src="/media/img/cfff16bf7c8d4114b5fd667fad841d792.jpg" id="img" alt="测试图片">
+    <form id="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" id="test" name="img">
+    </form>
+</body>
+<script>
+    $.ajaxSetup({
+        headers: {"X-CSRFToken": '{{ csrf_token }}'},
+    });
+    $('#form').on('change', function () {
+        var formData=new FormData();
+        formData.append('img', $('#test')[0].files[0]);
+        $.ajax({
+            url: "{% url 'nick:up_img' %}",
+            type: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(data){
+                if(data=="error"){
+                    alert("图片不正确")
+                }else {$('#img').attr("src", "/media/"+data)}
+            }
+        })
+    });
+</script>
+<html>

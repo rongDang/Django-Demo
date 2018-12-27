@@ -2,11 +2,18 @@ from django.db import models
 from django.utils import timezone
 from mdeditor.fields import MDTextField
 from django.contrib.auth.models import User
+import uuid
+
+
+def image_upload_to(instance, filename):
+    return 'img/{}'.format(uuid.uuid4().hex+filename)
 
 
 # 创建多对多测试表
 class Boy(models.Model):
     username = models.CharField(max_length=10)
+    # 测试头像
+    head = models.ImageField(upload_to=image_upload_to, default='http://img3.duitang.com/uploads/item/201505/22/20150522205616_KeX3C.jpeg')
 
     def __str__(self):
         return self.username
@@ -54,7 +61,7 @@ class Blog(models.Model):
     click_nums = models.IntegerField(verbose_name='点击量', default=0)
     # 类别和博客是一对多的关系
     category = models.ForeignKey(Category, verbose_name='文章类别', on_delete=models.CASCADE)
-    # 博客和标签是多对多的关系
+    # 博客和标签是多对多的关系v
     tag = models.ManyToManyField(Tag, verbose_name='文章标签')
 
     class Meta:
